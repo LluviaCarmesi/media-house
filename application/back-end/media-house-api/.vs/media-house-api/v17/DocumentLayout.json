@@ -1,0 +1,211 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\services\\videosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:services\\videosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\utilities\\videoutilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:utilities\\videoutilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:media-house-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VideoUtilities.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Utilities\\VideoUtilities.cs",
+              "RelativeDocumentMoniker": "Utilities\\VideoUtilities.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Utilities\\VideoUtilities.cs",
+              "RelativeToolTip": "Utilities\\VideoUtilities.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T19:30:10.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VideosService.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosService.cs",
+              "RelativeDocumentMoniker": "Services\\VideosService.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosService.cs",
+              "RelativeToolTip": "Services\\VideosService.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T19:23:08.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Video.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Video.cs",
+              "RelativeDocumentMoniker": "Models\\Video.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Video.cs",
+              "RelativeToolTip": "Models\\Video.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAYwFEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T19:07:38.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppSettings.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
+              "RelativeDocumentMoniker": "AppSettings.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
+              "RelativeToolTip": "AppSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T18:55:04.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VideosController.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\VideosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VideosController.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\VideosController.cs",
+              "RelativeToolTip": "Controllers\\VideosController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAApwBQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T18:13:43.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "media-house-api.http",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http",
+              "RelativeDocumentMoniker": "media-house-api.http",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http",
+              "RelativeToolTip": "media-house-api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-08-25T18:08:40.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T17:52:43.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T17:52:37.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T18:08:12.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-25T18:08:35.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-25T18:08:31.877Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

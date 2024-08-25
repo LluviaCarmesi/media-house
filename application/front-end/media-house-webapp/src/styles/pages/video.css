@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.container video {
+    max-width: 800px;
+    margin: auto;
+}

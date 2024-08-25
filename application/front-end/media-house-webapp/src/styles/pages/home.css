@@ -1,0 +1,13 @@
+.textContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.mainHeading {
+    font-size: 24px;
+}
+
+.description {
+    font-size: 16px;
+}
