@@ -1,6 +1,22 @@
+using media_house_api;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
+string allowOriginsPolicy = "allowOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: allowOriginsPolicy,
+    policy =>
+        {
+            policy.WithOrigins(
+                AppSettings.localHostProductionDomain,
+                AppSettings.localHostTestingDomain
+            );
+        });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -17,6 +33,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+
+app.UseCors(allowOriginsPolicy);
 
 app.UseAuthorization();
 

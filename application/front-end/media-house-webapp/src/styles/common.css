@@ -1,0 +1,29 @@
+.column {
+    float: left;
+    width: 33%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.videosContainer {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.videosContainer a {
+    text-align: center;
+}
+
+.videosContainer p {
+    font-size: 18px;
+}
+
+.videosContainer img {
+    max-height: 150px;
+    display: block;
+    margin: auto;
+}

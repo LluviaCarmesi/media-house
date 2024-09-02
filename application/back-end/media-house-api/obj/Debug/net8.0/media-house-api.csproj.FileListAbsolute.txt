@@ -31,3 +31,4 @@ C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.genruntimeconfig.cache
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\ref\media-house-api.dll
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.sourcelink.json

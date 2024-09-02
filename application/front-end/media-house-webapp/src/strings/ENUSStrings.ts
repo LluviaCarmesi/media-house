@@ -1,0 +1,1 @@
+export const NoVideosErrorMessage = "No videos were found";

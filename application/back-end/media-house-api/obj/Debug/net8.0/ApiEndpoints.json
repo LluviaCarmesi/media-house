@@ -28,11 +28,33 @@
   {
     "ContainingType": "media_house_api.Controllers.VideosController",
     "Method": "GetVideosBySearch",
-    "RelativePath": "Videos/Search",
+    "RelativePath": "Videos/Search/{searchTerm}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "media_house_api.Controllers.VideosController",
+    "Method": "GetVideoByType",
+    "RelativePath": "Videos/Type/{type}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

@@ -15,16 +15,22 @@ namespace media_house_api.Controllers
             return VideosService.GetVideoJSON();
         }
 
-        [HttpGet("Search")]
-        public IActionResult GetVideosBySearch()
+        [HttpGet("Search/{searchTerm}")]
+        public IActionResult GetVideosBySearch(string searchTerm)
         {
-            return new OkObjectResult("");
+            return VideosService.GetVideoBySearch(searchTerm);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetVideoById(String id)
+        public IActionResult GetVideoById(string id)
         {
             return VideosService.GetVideoById(id);
+        }
+
+        [HttpGet("Type/{type}")]
+        public IActionResult GetVideoByType(string type)
+        {
+            return VideosService.GetVideoByType(type);
         }
     }
 }

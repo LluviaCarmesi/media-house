@@ -8,21 +8,22 @@ namespace media_house_api.Services
     {
         public static IActionResult GetVideoJSON()
         {
-            String JSON = String.Empty;
+            string JSON = string.Empty;
             StreamReader streamReader = new StreamReader(AppSettings.videosJSONPath);
             try
             {
-                String line = streamReader.ReadLine();
+                string line = streamReader.ReadLine();
                 while (line != null)
                 {
-                    JSON+= line;
+                    JSON += line;
                     line = streamReader.ReadLine();
                 }
             }
             catch (Exception ex)
             {
-                return new BadRequestObjectResult(new {error = "Couldn't get JSON file"});
+                return new BadRequestObjectResult(new { error = "Couldn't get JSON file" });
             }
+            streamReader.Close();
 
             List<Video> videos = new List<Video>();
             try
@@ -37,13 +38,13 @@ namespace media_house_api.Services
             return new OkObjectResult(videos);
         }
 
-        public static IActionResult GetVideoById(String id)
+        public static IActionResult GetVideoBySearch(string searchTerm)
         {
-            String JSON = String.Empty;
+            string JSON = string.Empty;
             StreamReader streamReader = new StreamReader(AppSettings.videosJSONPath);
             try
             {
-                String line = streamReader.ReadLine();
+                string line = streamReader.ReadLine();
                 while (line != null)
                 {
                     JSON += line;
@@ -54,6 +55,49 @@ namespace media_house_api.Services
             {
                 return new BadRequestObjectResult(new { error = "Couldn't get JSON file" });
             }
+            streamReader.Close();
+
+            List<Video> videos = new List<Video>();
+            try
+            {
+                videos = VideoUtilities.ConvertJSONToModel(JSON);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(new { error = "Couldn't properly deserialize JSON file" });
+            }
+            List<Video> foundVideos = new List<Video>();
+            foundVideos = videos.FindAll(
+                video => video.Title.ToLower().Contains(searchTerm.ToLower()) ||
+                (
+                    video.Tags.Find(tag => tag.ToLower() == searchTerm.ToLower()) != null
+                )
+            );
+            if (foundVideos.Count == 0)
+            {
+                return new BadRequestObjectResult(new { error = "No Videos Found" });
+            }
+            return new OkObjectResult(foundVideos);
+        }
+
+        public static IActionResult GetVideoById(string id)
+        {
+            string JSON = string.Empty;
+            StreamReader streamReader = new StreamReader(AppSettings.videosJSONPath);
+            try
+            {
+                string line = streamReader.ReadLine();
+                while (line != null)
+                {
+                    JSON += line;
+                    line = streamReader.ReadLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(new { error = "Couldn't get JSON file" });
+            }
+            streamReader.Close();
 
             List<Video> videos = new List<Video>();
             try
@@ -66,11 +110,56 @@ namespace media_house_api.Services
             }
             Video foundVideo = videos.FirstOrDefault(video => video.Id.ToLower() == id.ToLower());
 
-            if (foundVideo == null) {
-                return new BadRequestObjectResult(new { error = "No Video Found"});
+            if (foundVideo == null)
+            {
+                return new BadRequestObjectResult(new { error = "No Videos Found" });
             }
 
             return new OkObjectResult(foundVideo);
+        }
+
+        public static IActionResult GetVideoByType(string type)
+        {
+            string JSON = string.Empty;
+            StreamReader streamReader = new StreamReader(AppSettings.videosJSONPath);
+            try
+            {
+                string line = streamReader.ReadLine();
+                while (line != null)
+                {
+                    JSON += line;
+                    line = streamReader.ReadLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(new { error = "Couldn't get JSON file" });
+            }
+            streamReader.Close();
+
+            List<Video> videos = new List<Video>();
+            try
+            {
+                videos = VideoUtilities.ConvertJSONToModel(JSON);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(new { error = "Couldn't properly deserialize JSON file" });
+            }
+            List<Video> foundVideos = new List<Video>();
+            foundVideos = videos.FindAll(video => video.Type.ToLower() == type.ToLower());
+
+            if (foundVideos.Count == 0)
+            {
+                return new BadRequestObjectResult(new { error = "No Videos Found" });
+            }
+
+            VideosWithTags videosWithTags = new VideosWithTags(
+                foundVideos,
+                VideoUtilities.GetAllTagsFromVideos(foundVideos)
+            );
+
+            return new OkObjectResult(videosWithTags);
         }
     }
 }

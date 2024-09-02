@@ -2,18 +2,19 @@
 {
     public class Video
     {
-        private string id = String.Empty;
-        private String title = String.Empty;
-        private List<String> tags = new List<String>();
-        private String previewPath = String.Empty;
-        private String videoPath = String.Empty;
+        private string id = string.Empty;
+        private string title = string.Empty;
+        private string type = string.Empty;
+        private List<string> tags = new List<string>();
+        private string previewPath = string.Empty;
+        private string videoPath = string.Empty;
 
         public Video(
-            String id,
-            String title,
-            List<String> tags,
-            String previewPath,
-            String videoPath
+            string id,
+            string title,
+            List<string> tags,
+            string previewPath,
+            string videoPath
             )
         {
             this.id = id;
@@ -23,7 +24,7 @@
             this.videoPath = videoPath;
         }
 
-        public String Id
+        public string Id
         {
             get
             {
@@ -35,7 +36,7 @@
             }
         }
 
-        public String Title
+        public string Title
         {
             get
             {
@@ -47,7 +48,18 @@
             }
         }
 
-        public List<String> Tags
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+            }
+        }
+        public List<string> Tags
         {
             get
             {
@@ -59,7 +71,7 @@
             }
         }
 
-        public String PreviewPath
+        public string PreviewPath
         {
             get
             {
@@ -71,7 +83,7 @@
             }
         }
 
-        public String VideoPath
+        public string VideoPath
         {
             get
             {
