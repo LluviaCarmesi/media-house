@@ -36,6 +36,10 @@
     {:else}
         <h1>{video.title}</h1>
         <h1>{errorMessage}</h1>
-        <video src={video.videoPath} controls></video>
+        <video controls>
+            <source id="videoSource" src={video.videoPath} type="video/mp4" />
+            Your browser doesn't support videos
+            <track kind="captions" />
+        </video>
     {/if}
 </div>

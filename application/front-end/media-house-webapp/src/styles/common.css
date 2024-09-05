@@ -16,6 +16,12 @@
 
 .videosContainer a {
     text-align: center;
+    text-decoration: none;
+    color: rgb(0, 155, 255);
+}
+
+.videosContainer a:hover {
+    color: rgb(0, 215, 255);
 }
 
 .videosContainer p {
