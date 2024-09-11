@@ -1,5 +1,8 @@
 node_modules
 
+back-end/media-house-api/bin
+back-end/media-house-api/AppSettings.cs
+
 # Output
 .output
 .vercel
