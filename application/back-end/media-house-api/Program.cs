@@ -12,9 +12,11 @@ builder.Services.AddCors(options =>
     policy =>
         {
             policy.WithOrigins(
-                AppSettings.localHostProductionDomain,
-                AppSettings.localHostTestingDomain
+                AppSettings.LOCAL_HOST_PRODUCTION_DOMAIN,
+                AppSettings.LOCAL_HOST_TESTING_DOMAIN
             );
+            policy.AllowAnyHeader();
+            policy.AllowAnyMethod();
         });
 });
 

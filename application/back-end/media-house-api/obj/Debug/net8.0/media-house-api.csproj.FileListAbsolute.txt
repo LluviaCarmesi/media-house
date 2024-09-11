@@ -6,6 +6,7 @@ C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\media-house-api.dll
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\media-house-api.pdb
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -16,6 +17,7 @@ C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.csproj.CoreCompileInputs.cache
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.sourcelink.json
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\staticwebassets\msbuild.media-house-api.Microsoft.AspNetCore.StaticWebAssets.props
@@ -30,5 +32,4 @@ C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.pdb
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.genruntimeconfig.cache
 C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\ref\media-house-api.dll
-C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\obj\Debug\net8.0\media-house-api.sourcelink.json
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Debug\net8.0\MySqlConnector.dll

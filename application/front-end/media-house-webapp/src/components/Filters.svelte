@@ -34,7 +34,7 @@
         <select on:change={onChangeTagsDropdown}>
             <option value="Any">Any</option>
             {#each tagsDropdownOptions as tagDropdownOption}
-                <option value={tagDropdownOption}>{tagDropdownOption}</option>
+                <option value={tagDropdownOption.value}>{tagDropdownOption.label}</option>
             {/each}
         </select>
     {/if}

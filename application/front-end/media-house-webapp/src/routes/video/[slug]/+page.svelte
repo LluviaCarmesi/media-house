@@ -3,6 +3,7 @@
     import Navigation from "../../../components/Navigation.svelte";
     export let data;
     import getVideoById from "../../../services/getVideoById";
+    import { SERVER_VIDEOS_URI } from "../../../appSettings";
 
     let video = {
         id: "",
@@ -37,7 +38,11 @@
         <h1>{video.title}</h1>
         <h1>{errorMessage}</h1>
         <video controls>
-            <source id="videoSource" src={video.videoPath} type="video/mp4" />
+            <source
+                id="videoSource"
+                src={`${SERVER_VIDEOS_URI}/${video.videoPath}`}
+                type="video/mp4"
+            />
             Your browser doesn't support videos
             <track kind="captions" />
         </video>

@@ -7,12 +7,14 @@
     import "../../styles/common.css";
     import getFilteredVideos from "../../utilities/getFilteredVideos";
     import separateVideos from "../../utilities/separateVideos";
+    import type IDropdownOption from "../../interfaces/IDropdownOption";
+    import createDropdownOptions from "../../utilities/createDropdownOptions";
 
     let videos: IVideo[] = [];
     let firstVideos: IVideo[] = [];
     let secondVideos: IVideo[] = [];
     let thirdVideos: IVideo[] = [];
-    let tags: string[] = [];
+    let tagsDropdownOptions: IDropdownOption[] = [];
     let filteredVideos: IVideo[] = [];
     let isLoading = true;
     const loadingMessage = "Loading...";
@@ -24,7 +26,7 @@
         const videoResponse = await getVideosByType("show");
         if (videoResponse.isSuccessful) {
             videos = videoResponse.videos;
-            tags = videoResponse.tags;
+            tagsDropdownOptions = createDropdownOptions(videoResponse.tags);
             filteredVideos = getFilteredVideos(videos, searchTerm, chosenTag);
             filteredVideos = videos;
             const separatedVideos = separateVideos(filteredVideos, 3);
@@ -67,7 +69,7 @@
     label={"Search Shows"}
     onChangeTextbox={getSearchTerm}
     onChangeTagsDropdown={getChosenTag}
-    tagsDropdownOptions={tags}
+    tagsDropdownOptions={tagsDropdownOptions}
 />
 
 <div class="videosContainer">

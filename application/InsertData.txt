@@ -1,0 +1,33 @@
+INSERT INTO videos (
+    id,
+    title,
+    type,
+    episode,
+    show_id,
+    duration,
+    preview_path,
+    gif_preview_path,
+    video_path
+)
+VALUES (
+    "133f4740-60e3-4f0e-b2e5-3482bfaf17e2",
+    "AdriannaFucksSleepingGuy",
+    "movie",
+    "",
+    NULL,
+    "23:21",
+    "photos/english/regular/AdriannaFucksSleepingGuy.jpg",
+    "",
+    "videos/english/regular/AdriannaFucksSleepingGuy.mp4"
+),
+(
+    "6a500a58-dfa7-49d6-8812-ec07fabe4751",
+    "AriParkerHandjob",
+    "movie",
+    "",
+    NULL,
+    "08:45",
+    "photos/english/regular/AriParkerHandjob.jpg",
+    "",
+    "videos/english/regular/AriParkerHandjob.mp4"
+);

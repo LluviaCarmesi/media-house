@@ -1,6 +1,6 @@
-@media_house_api_HostAddress = http://localhost:5003
+@media_house_api_HostAddress = http://localhost:1293
 
-GET {{media_house_api_HostAddress}}/weatherforecast/
+GET {{media_house_api_HostAddress}}/Videos/
 Accept: application/json
 
 ###

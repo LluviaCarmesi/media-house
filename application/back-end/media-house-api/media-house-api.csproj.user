@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\Properties\PublishProfiles\registry.hub.docker.com.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

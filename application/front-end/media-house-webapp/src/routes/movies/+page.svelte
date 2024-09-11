@@ -7,12 +7,15 @@
     import "../../styles/common.css";
     import getFilteredVideos from "../../utilities/getFilteredVideos";
     import separateVideos from "../../utilities/separateVideos";
+    import { SERVER_VIDEOS_URI } from "../../appSettings";
+    import createDropdownOptions from "../../utilities/createDropdownOptions";
+    import type IDropdownOption from "../../interfaces/IDropdownOption";
 
     let videos: IVideo[] = [];
     let firstVideos: IVideo[] = [];
     let secondVideos: IVideo[] = [];
     let thirdVideos: IVideo[] = [];
-    let tags: string[] = [];
+    let tagsDropdownOptions: IDropdownOption[] = [];
     let filteredVideos: IVideo[] = [];
     let isLoading = true;
     const loadingMessage = "Loading...";
@@ -24,7 +27,7 @@
         const videoResponse = await getVideosByType("movie");
         if (videoResponse.isSuccessful) {
             videos = videoResponse.videos;
-            tags = videoResponse.tags;
+            tagsDropdownOptions = createDropdownOptions(videoResponse.tags);
             filteredVideos = getFilteredVideos(videos, searchTerm, chosenTag);
             filteredVideos = videos;
             const separatedVideos = separateVideos(filteredVideos, 3);
@@ -67,7 +70,7 @@
     label={"Search Movies"}
     onChangeTextbox={getSearchTerm}
     onChangeTagsDropdown={getChosenTag}
-    tagsDropdownOptions={tags}
+    tagsDropdownOptions={tagsDropdownOptions}
 />
 
 <div class="videosContainer">
@@ -79,7 +82,10 @@
         <div class="column">
             {#each firstVideos as video}
                 <a href={"/video/" + video.id}>
-                    <img src={video.previewPath} />
+                    <img
+                        alt=""
+                        src={`${SERVER_VIDEOS_URI}/${video.previewPath}`}
+                    />
                     <p>{video.title}</p>
                 </a>
             {/each}
@@ -87,7 +93,10 @@
         <div class="column">
             {#each secondVideos as video}
                 <a href={"/video/" + video.id}>
-                    <img src={video.previewPath} />
+                    <img
+                        alt=""
+                        src={`${SERVER_VIDEOS_URI}/${video.previewPath}`}
+                    />
                     <p>{video.title}</p>
                 </a>
             {/each}
@@ -95,7 +104,10 @@
         <div class="column">
             {#each thirdVideos as video}
                 <a href={"/video/" + video.id}>
-                    <img src={video.previewPath} />
+                    <img
+                        alt=""
+                        src={`${SERVER_VIDEOS_URI}/${video.previewPath}`}
+                    />
                     <p>{video.title}</p>
                 </a>
             {/each}

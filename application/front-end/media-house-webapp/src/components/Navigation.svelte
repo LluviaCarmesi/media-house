@@ -9,5 +9,7 @@
     <div>
         <a href="/shows">Shows</a>
         <a href="/movies">Movies</a>
+        <a href="/add-video">Add a Video</a>
+        <a href="/edit-video">Edit a Video</a>
     </div>
 </div>

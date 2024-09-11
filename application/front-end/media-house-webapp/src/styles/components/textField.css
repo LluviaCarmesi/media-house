@@ -1,0 +1,9 @@
+.textFieldContainer {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content:space-between;
+}
+
+.textFieldContainer span {
+    margin-right: 10px;
+}

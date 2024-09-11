@@ -1,0 +1,12 @@
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\media-house-api
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\appsettings.Development.json
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\appsettings.json
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\media-house-api.dll
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\media-house-api.deps.json
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\media-house-api.runtimeconfig.json
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\media-house-api.pdb
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\Microsoft.OpenApi.dll
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\Newtonsoft.Json.dll
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\meradil\Documents\Development\Personal\media-house\application\back-end\media-house-api\bin\Release\net8.0\linux-arm64\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

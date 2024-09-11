@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "fx8+iSWjNQMHViXfv4Ul2ZmK9cxv+fJPiAN3icPWpes=",
+  "Source": "media-house-api",
+  "BasePath": "_content/media-house-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
