@@ -6,6 +6,7 @@
     import type IVideo from "../interfaces/IVideo";
     import getVideosBySearch from "../services/getVideosBySearch";
     import separateVideos from "../utilities/separateVideos";
+    import { SERVER_VIDEOS_URI } from "../appSettings";
 
     let videos: IVideo[] = [];
     let firstVideos: IVideo[] = [];
@@ -64,7 +65,7 @@
             <div class="column">
                 {#each firstVideos as video}
                     <a href={"/video/" + video.id}>
-                        <img src={video.previewPath} />
+                        <img src={`${SERVER_VIDEOS_URI}/${video.previewPath}`} />
                         <p>{video.title}</p>
                     </a>
                 {/each}
@@ -72,7 +73,7 @@
             <div class="column">
                 {#each secondVideos as video}
                     <a href={"/video/" + video.id}>
-                        <img src={video.previewPath} />
+                        <img src={`${SERVER_VIDEOS_URI}/${video.previewPath}`} />
                         <p>{video.title}</p>
                     </a>
                 {/each}
@@ -80,7 +81,7 @@
             <div class="column">
                 {#each thirdVideos as video}
                     <a href={"/video/" + video.id}>
-                        <img src={video.previewPath} />
+                        <img src={`${SERVER_VIDEOS_URI}/${video.previewPath}`} />
                         <p>{video.title}</p>
                     </a>
                 {/each}

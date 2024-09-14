@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,15 +94,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
@@ -118,16 +114,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "VideosServices.cs",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosServices.cs",
               "RelativeDocumentMoniker": "Services\\VideosServices.cs",
               "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosServices.cs",
               "RelativeToolTip": "Services\\VideosServices.cs",
-              "ViewState": "AgIAAGoBAAAAAAAAAAAewHQBAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAGoBAAAAAAAAAAAewHMBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T19:23:08.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-25T19:23:08.019Z"
             },
             {
               "$type": "Document",
@@ -151,18 +146,17 @@
               "RelativeToolTip": "Controllers\\VideosController.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAYwFIAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T18:13:43.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-25T18:13:43.258Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AppSettings.cs",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
               "RelativeDocumentMoniker": "AppSettings.cs",
               "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
               "RelativeToolTip": "AppSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-25T18:55:04.265Z",
               "EditorCaption": ""
@@ -357,6 +351,10 @@
               "RelativeToolTip": "media-house-api.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-09-07T18:39:43.283Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             }
           ]
         }

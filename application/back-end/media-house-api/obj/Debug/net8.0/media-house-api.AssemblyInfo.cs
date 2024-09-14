@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("media-house-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0611999ab22112b1ec3aafd6a9b251c5da929b82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beb5ea5c1f6124f3edbb88cc4f69ecd0ddca5f78")]
 [assembly: System.Reflection.AssemblyProductAttribute("media-house-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("media-house-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
