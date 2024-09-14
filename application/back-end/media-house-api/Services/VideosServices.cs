@@ -362,6 +362,7 @@ namespace media_house_api.Services
             int videoFileTotalChunks
         )
         {
+            Console.WriteLine(videoFileChunkNumber);
             if (
                 File.Exists($"{AppSettings.VIDEOS_DIRECTORY}/{videoFile.FileName}") ||
                 File.Exists($"{AppSettings.PHOTOS_DIRECTORY}/{previewFile.FileName}")
@@ -369,7 +370,6 @@ namespace media_house_api.Services
             {
                 return new CommonServiceRequest(false, "The file(s) already exist");
             }
-
             FileStream videoFileChunkStream = new FileStream
             (
                 $"{AppSettings.VIDEOS_TEMP_DIRECTORY}/{videoFile.FileName}_{videoFileChunkNumber}",

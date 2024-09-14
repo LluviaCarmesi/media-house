@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tXCZF6Yxo0I=",
+  "dgSpecHash": "7ewbcqT2RdU=",
   "success": true,
   "projectFilePath": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,8 @@
     "C:\\Users\\meradil\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\meradil\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\meradil\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "C:\\Users\\meradil\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    "C:\\Users\\meradil\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "C:\\Users\\meradil\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm\\8.0.8\\microsoft.netcore.app.host.linux-arm.8.0.8.nupkg.sha512"
   ],
   "logs": []
 }

@@ -92,14 +92,14 @@ namespace media_house_api.Controllers
                 return BadRequest(new { error = videoUploadValidationResponse.Result });
             }
             if (
-                videoChunksValidationResult.videoChunks.VideoFileChunkNumber ==
+                videoChunksValidationResult.videoChunks.VideoFileChunkNumber !=
                 videoChunksValidationResult.videoChunks.VideoFileTotalChunks - 1
             )
             {
                 return new OkObjectResult(new { response = "Chunk uploaded" });
             }
-            videoModelValidationResult.Video.VideoPath = $"{AppSettings.VIDEOS_DIRECTORY}/{videoFile.FileName}";
-            videoModelValidationResult.Video.PreviewPath = $"{AppSettings.PHOTOS_DIRECTORY}/{previewFile.FileName}";
+            videoModelValidationResult.Video.VideoPath = $"{AppSettings.VIDEOS_SERVER_PATH}/{videoFile.FileName}";
+            videoModelValidationResult.Video.PreviewPath = $"{AppSettings.PHOTOS_SERVER_PATH}/{previewFile.FileName}";
 
             CommonServiceRequest videoAddValidation = VideosServices.AddVideo(videoModelValidationResult.Video);
             if (!videoAddValidation.IsSuccessful)

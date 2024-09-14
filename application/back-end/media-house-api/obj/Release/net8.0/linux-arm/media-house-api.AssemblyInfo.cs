@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("media-house-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18d2c0be5d1f5198bd091720249e25d1a2789c80")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0611999ab22112b1ec3aafd6a9b251c5da929b82")]
 [assembly: System.Reflection.AssemblyProductAttribute("media-house-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("media-house-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

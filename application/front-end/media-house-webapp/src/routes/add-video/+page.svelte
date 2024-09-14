@@ -4,7 +4,7 @@
     import TextField from "../../components/TextField.svelte";
     import Dropdown from "../../components/Dropdown.svelte";
     import FilePicker from "../../components/FilePicker.svelte";
-    import { TYPES_OPTIONS } from "../../appSettings";
+    import { CHUNK_SIZE, TYPES_OPTIONS } from "../../appSettings";
     import getShows from "../../services/getShows";
     import type IDropdownOption from "../../interfaces/IDropdownOption";
     import addVideo from "../../services/addVideo";
@@ -28,6 +28,8 @@
         videoFile: null,
     };
 
+    let progress = "";
+
     async function getShowsResponse() {
         const showsResponse = await getShows();
         if (showsResponse.isSuccessful) {
@@ -42,7 +44,7 @@
         }
         isLoading = false;
     }
-    
+
     getShowsResponse();
 
     function handleFileUpload(event: any) {
@@ -59,14 +61,34 @@
     }
 
     async function submitVideo() {
-        const addVideoResponse = await addVideo(newVideoItem);
         newVideoItem.tags = newVideoItem.tagsString.split(",");
-        isSuccessful = !addVideoResponse.doesErrorExist;
-        if (!isSuccessful) {
-            errorMessage = "Couldn't add video";
-        } else {
-            errorMessage = "";
+
+        const videoFileTotalChunks = Math.ceil(
+            newVideoItem.videoFile.size / CHUNK_SIZE,
+        );
+        for (let i = 0; i < newVideoItem.videoFile.size; i += CHUNK_SIZE) {
+            const end = Math.min(i + CHUNK_SIZE, newVideoItem.videoFile.size);
+            const chunk = newVideoItem.videoFile.slice(i, end);
+            const videoFileChunkNumber = Math.floor(i / CHUNK_SIZE);
+            progress = (
+                (videoFileChunkNumber / videoFileTotalChunks) *
+                100
+            ).toFixed(2);
+            const addVideoResponse = await addVideo(
+                newVideoItem,
+                videoFileChunkNumber,
+                videoFileTotalChunks,
+                chunk,
+            );
+            isSuccessful = !addVideoResponse.doesErrorExist;
+            if (!isSuccessful) {
+                errorMessage = "Couldn't add video";
+                break;
+            } else {
+                errorMessage = "";
+            }
         }
+        progress = "";
     }
 </script>
 
@@ -79,6 +101,13 @@
     <div class="textContainer">
         <span class="description">Add a video using the form below! </span>
     </div>
+    {#if !!progress}
+        <div class="textContainer">
+            <span class="warning"
+                >Adding the video! Don't leave! {progress}% complete</span
+            >
+        </div>
+    {/if}
     {#if !!errorMessage}
         <div class="textContainer">
             <span class="error">{errorMessage}</span>
