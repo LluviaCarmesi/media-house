@@ -70,6 +70,11 @@ namespace media_house_api.Services
             {
                 mySqlConnection.Close();
             }
+
+            if (videos.Count == 0)
+            {
+                return new BadRequestObjectResult(new { error = "No Videos Found" });
+            }
             return new OkObjectResult(videos);
         }
 
@@ -350,7 +355,12 @@ namespace media_house_api.Services
             return new CommonServiceRequest(isSuccessful, result);
         }
 
-        public static async Task<CommonServiceRequest> AddVideoFiles(IFormFile previewFile, IFormFile videoFile)
+        public static async Task<CommonServiceRequest> AddVideoFiles(
+            IFormFile previewFile,
+            IFormFile videoFile,
+            int videoFileChunkNumber,
+            int videoFileTotalChunks
+        )
         {
             if (
                 File.Exists($"{AppSettings.VIDEOS_DIRECTORY}/{videoFile.FileName}") ||
@@ -358,6 +368,26 @@ namespace media_house_api.Services
                 )
             {
                 return new CommonServiceRequest(false, "The file(s) already exist");
+            }
+
+            FileStream videoFileChunkStream = new FileStream
+            (
+                $"{AppSettings.VIDEOS_TEMP_DIRECTORY}/{videoFile.FileName}_{videoFileChunkNumber}",
+                FileMode.Create
+            );
+            try
+            {
+                await videoFile.CopyToAsync(videoFileChunkStream);
+                videoFileChunkStream.Close();
+            }
+            catch (Exception exception)
+            {
+                return new CommonServiceRequest(false, exception.Message);
+            }
+
+            if (videoFileChunkNumber != videoFileTotalChunks - 1)
+            {
+                return new CommonServiceRequest(true, "Chunks were uploaded");
             }
 
             FileStream videoFileStream = new FileStream
@@ -376,8 +406,19 @@ namespace media_house_api.Services
             {
                 await previewFile.CopyToAsync(previewFileStream);
                 previewFileStream.Close();
-                await videoFile.CopyToAsync(videoFileStream);
+
+                for (int i = 0; i < videoFileTotalChunks; i++)
+                {
+                    string tempPath =
+                        $"{AppSettings.VIDEOS_TEMP_DIRECTORY}/{videoFile.FileName}_{i}";
+
+                    FileStream tempStream = new FileStream(tempPath, FileMode.Open);
+                    await tempStream.CopyToAsync(videoFileStream);
+                    tempStream.Close();
+                    File.Delete(tempPath);
+                }
                 videoFileStream.Close();
+
             }
             catch (Exception exception)
             {

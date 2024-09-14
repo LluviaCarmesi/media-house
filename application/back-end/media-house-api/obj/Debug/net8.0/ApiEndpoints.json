@@ -104,6 +104,16 @@
         "IsRequired": false
       },
       {
+        "Name": "videoFileChunkNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "videoFileTotalChunks",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "title",
         "Type": "System.String",
         "IsRequired": false

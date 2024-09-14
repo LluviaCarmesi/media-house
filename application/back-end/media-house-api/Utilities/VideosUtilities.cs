@@ -157,10 +157,35 @@ namespace media_house_api.Utilities
                 video.Language = language;
             }
 
-            
+
             video.Tags = JsonConvert.DeserializeObject<List<string>>(tags);
 
             return new VideoServiceRequest(isValid, result, video);
+        }
+
+        public static VideoChunksServiceRequest CheckVideoChunks
+        (
+            string videoFileChunkNumber,
+            string videoFileTotalChunks
+        )
+        {
+            int videoFileChunkNumberInt;
+            int videoFileTotalChunksInt;
+
+            if (
+                !int.TryParse(videoFileChunkNumber, out videoFileChunkNumberInt) ||
+                !int.TryParse(videoFileTotalChunks, out videoFileTotalChunksInt)
+            )
+            {
+                return new VideoChunksServiceRequest(false, "Chunks are not proper ints", new VideoChunks());
+            }
+
+            VideoChunks videoChunks = new VideoChunks
+            (
+                videoFileChunkNumberInt,
+                videoFileTotalChunksInt
+            );
+            return new VideoChunksServiceRequest(true, "", videoChunks);
         }
     }
 }

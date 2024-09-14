@@ -44,6 +44,11 @@ namespace media_house_api.Services
                 mySqlConnection.Close();
             }
 
+            if (shows.Count == 0)
+            {
+                return new BadRequestObjectResult(new { error = "No Shows Found" });
+            }
+
             return new OkObjectResult(shows);
         }
     }

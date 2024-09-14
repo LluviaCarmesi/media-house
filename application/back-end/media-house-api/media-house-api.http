@@ -1,4 +1,4 @@
-@media_house_api_HostAddress = http://localhost:1293
+@media_house_api_HostAddress = http://localhost:5001
 
 GET {{media_house_api_HostAddress}}/Videos/
 Accept: application/json

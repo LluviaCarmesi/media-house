@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:services\\videosservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\utilities\\videosutilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:utilities\\videosutilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\servicerequests\\videoservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\servicerequests\\videoservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:controllers\\videoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\services\\showsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,8 +27,36 @@
       "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:controllers\\showscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\servicerequests\\videoservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\servicerequests\\videoservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\videochunks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\videochunks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\servicerequests\\videochunksservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\servicerequests\\videochunksservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\show.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\show.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\videoswithtags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\videoswithtags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\video.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\servicerequests\\commonservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\servicerequests\\commonservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
@@ -51,24 +67,16 @@
       "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\servicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\show.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\show.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\servicerequests\\commonservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:models\\servicerequests\\commonservicerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81CA6BDC-EFA2-4E23-8589-E523EA4550BD}|media-house-api.csproj|c:\\users\\meradil\\documents\\development\\personal\\media-house\\application\\back-end\\media-house-api\\models\\videotags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,11 +94,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VideosServices.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosServices.cs",
+              "RelativeDocumentMoniker": "Services\\VideosServices.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosServices.cs",
+              "RelativeToolTip": "Services\\VideosServices.cs",
+              "ViewState": "AgIAAJMBAAAAAAAAAADwv6MBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T19:23:08.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShowsServices.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\ShowsServices.cs",
+              "RelativeDocumentMoniker": "Services\\ShowsServices.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\ShowsServices.cs",
+              "RelativeToolTip": "Services\\ShowsServices.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T02:55:53.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VideosController.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\VideosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VideosController.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\VideosController.cs",
+              "RelativeToolTip": "Controllers\\VideosController.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAADwv1IAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T18:13:43.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShowsController.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\ShowsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ShowsController.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\ShowsController.cs",
+              "RelativeToolTip": "Controllers\\ShowsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T02:54:55.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppSettings.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
+              "RelativeDocumentMoniker": "AppSettings.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
+              "RelativeToolTip": "AppSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T18:55:04.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -98,91 +171,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VideosServices.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosServices.cs",
-              "RelativeDocumentMoniker": "Services\\VideosServices.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\VideosServices.cs",
-              "RelativeToolTip": "Services\\VideosServices.cs",
-              "ViewState": "AgIAAGwBAAAAAAAAAAAAAHEBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T19:23:08.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "VideosController.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\VideosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VideosController.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\VideosController.cs",
-              "RelativeToolTip": "Controllers\\VideosController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAADEAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T18:13:43.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAwwA8AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T17:52:37.819Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Video.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Video.cs",
-              "RelativeDocumentMoniker": "Models\\Video.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Video.cs",
-              "RelativeToolTip": "Models\\Video.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAUwJYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T19:07:38.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "VideosUtilities.cs",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Utilities\\VideosUtilities.cs",
               "RelativeDocumentMoniker": "Utilities\\VideosUtilities.cs",
               "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Utilities\\VideosUtilities.cs",
               "RelativeToolTip": "Utilities\\VideosUtilities.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAQwEEAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAowLMAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-25T19:30:10.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppSettings.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
-              "RelativeDocumentMoniker": "AppSettings.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\AppSettings.cs",
-              "RelativeToolTip": "AppSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T18:55:04.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "VideoServiceRequest.cs",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\ServiceRequests\\VideoServiceRequest.cs",
               "RelativeDocumentMoniker": "Models\\ServiceRequests\\VideoServiceRequest.cs",
               "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\ServiceRequests\\VideoServiceRequest.cs",
               "RelativeToolTip": "Models\\ServiceRequests\\VideoServiceRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T18:00:40.51Z",
               "EditorCaption": ""
@@ -190,71 +198,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ShowsServices.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\ShowsServices.cs",
-              "RelativeDocumentMoniker": "Services\\ShowsServices.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Services\\ShowsServices.cs",
-              "RelativeToolTip": "Services\\ShowsServices.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T02:55:53.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ShowsController.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\ShowsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ShowsController.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Controllers\\ShowsController.cs",
-              "RelativeToolTip": "Controllers\\ShowsController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T02:54:55.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "VideosWithTags.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\VideosWithTags.cs",
-              "RelativeDocumentMoniker": "Models\\VideosWithTags.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\VideosWithTags.cs",
-              "RelativeToolTip": "Models\\VideosWithTags.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAgAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T19:31:23.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "media-house-api.http",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http",
-              "RelativeDocumentMoniker": "media-house-api.http",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http",
-              "RelativeToolTip": "media-house-api.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-09-07T23:04:02.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-25T18:08:35.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "ServiceRequest.cs",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\ServiceRequest.cs",
               "RelativeDocumentMoniker": "Models\\ServiceRequest.cs",
@@ -267,46 +210,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-11T14:17:19.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Show.cs",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Show.cs",
-              "RelativeDocumentMoniker": "Models\\Show.cs",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Show.cs",
-              "RelativeToolTip": "Models\\Show.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "VideoChunks.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\VideoChunks.cs",
+              "RelativeDocumentMoniker": "Models\\VideoChunks.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\VideoChunks.cs",
+              "RelativeToolTip": "Models\\VideoChunks.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T02:56:25.156Z",
+              "WhenOpened": "2024-09-14T00:41:56.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-25T18:08:31.877Z",
+              "DocumentIndex": 9,
+              "Title": "VideoChunksServiceRequest.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\ServiceRequests\\VideoChunksServiceRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceRequests\\VideoChunksServiceRequest.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\ServiceRequests\\VideoChunksServiceRequest.cs",
+              "RelativeToolTip": "Models\\ServiceRequests\\VideoChunksServiceRequest.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T00:41:13.858Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 11,
+              "Title": "VideosWithTags.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\VideosWithTags.cs",
+              "RelativeDocumentMoniker": "Models\\VideosWithTags.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\VideosWithTags.cs",
+              "RelativeToolTip": "Models\\VideosWithTags.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T19:31:23.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Video.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Video.cs",
+              "RelativeDocumentMoniker": "Models\\Video.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Video.cs",
+              "RelativeToolTip": "Models\\Video.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAUwJYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T19:07:38.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "CommonServiceRequest.cs",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\ServiceRequests\\CommonServiceRequest.cs",
               "RelativeDocumentMoniker": "Models\\ServiceRequests\\CommonServiceRequest.cs",
@@ -314,11 +270,85 @@
               "RelativeToolTip": "Models\\ServiceRequests\\CommonServiceRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T18:05:04.901Z"
+              "WhenOpened": "2024-09-10T18:05:04.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Show.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Show.cs",
+              "RelativeDocumentMoniker": "Models\\Show.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\Show.cs",
+              "RelativeToolTip": "Models\\Show.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T02:56:25.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T17:52:37.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-25T18:08:35.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "media-house-api.http",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http",
+              "RelativeDocumentMoniker": "media-house-api.http",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.http",
+              "RelativeToolTip": "media-house-api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-09-07T23:04:02.988Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-25T18:08:31.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-11T14:17:19.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "VideoTags.cs",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\Models\\VideoTags.cs",
               "RelativeDocumentMoniker": "Models\\VideoTags.cs",
@@ -330,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "media-house-api",
               "DocumentMoniker": "C:\\Users\\meradil\\Documents\\Development\\Personal\\media-house\\application\\back-end\\media-house-api\\media-house-api.csproj",
               "RelativeDocumentMoniker": "media-house-api.csproj",

@@ -33,7 +33,7 @@ export default async function getShows() {
             console.log(error);
         });
     if (returnedResponse.shows.length === 0) {
-        returnedResponse.errorMessage = Strings.NoVideosErrorMessage;
+        returnedResponse.errorMessage = Strings.NoShowsErrorMessage;
     }
     return returnedResponse;
 }

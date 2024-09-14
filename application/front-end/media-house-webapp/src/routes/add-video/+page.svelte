@@ -42,7 +42,7 @@
         }
         isLoading = false;
     }
-
+    
     getShowsResponse();
 
     function handleFileUpload(event: any) {

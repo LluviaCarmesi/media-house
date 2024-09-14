@@ -41,6 +41,8 @@ namespace media_house_api.Controllers
         (
             [FromForm] IFormFile? previewFile,
             [FromForm] IFormFile? videoFile,
+            [FromForm] string? videoFileChunkNumber,
+            [FromForm] string? videoFileTotalChunks,
             [FromForm] string? title,
             [FromForm] string? type,
             [FromForm] string? episode,
@@ -67,11 +69,34 @@ namespace media_house_api.Controllers
             {
                 return BadRequest(new { error = videoModelValidationResult.Result });
             }
-            Task<CommonServiceRequest> videoUploadValidation = VideosServices.AddVideoFiles(previewFile, videoFile);
+
+            VideoChunksServiceRequest videoChunksValidationResult = VideosUtilities.CheckVideoChunks
+            (
+                videoFileChunkNumber,
+                videoFileTotalChunks
+            );
+            if (!videoChunksValidationResult.IsSuccessful)
+            {
+                return BadRequest(new { error = videoChunksValidationResult.Result });
+            }
+
+            Task<CommonServiceRequest> videoUploadValidation = VideosServices.AddVideoFiles(
+                previewFile,
+                videoFile,
+                videoChunksValidationResult.videoChunks.VideoFileChunkNumber,
+                videoChunksValidationResult.videoChunks.VideoFileTotalChunks
+            );
             CommonServiceRequest videoUploadValidationResponse = videoUploadValidation.Result;
             if (!videoUploadValidationResponse.IsSuccessful)
             {
                 return BadRequest(new { error = videoUploadValidationResponse.Result });
+            }
+            if (
+                videoChunksValidationResult.videoChunks.VideoFileChunkNumber ==
+                videoChunksValidationResult.videoChunks.VideoFileTotalChunks - 1
+            )
+            {
+                return new OkObjectResult(new { response = "Chunk uploaded" });
             }
             videoModelValidationResult.Video.VideoPath = $"{AppSettings.VIDEOS_DIRECTORY}/{videoFile.FileName}";
             videoModelValidationResult.Video.PreviewPath = $"{AppSettings.PHOTOS_DIRECTORY}/{previewFile.FileName}";
