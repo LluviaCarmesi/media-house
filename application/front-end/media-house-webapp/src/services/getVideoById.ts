@@ -1,7 +1,7 @@
-import * as SETTINGS from "../appSettings";
 import isStatusGood from "../utilities/isStatusGood";
 import * as Strings from "../strings/ENUSStrings";
 import type IVideo from "../interfaces/IVideo";
+import { VIDEOS_URI } from "../appSettings";
 
 export default async function getVideoById(id: string) {
     const returnedResponse: {
@@ -16,6 +16,7 @@ export default async function getVideoById(id: string) {
             type: "",
             episode: "",
             showID: 0,
+            language: "",
             duration: "",
             tags: [""],
             previewPath: "",
@@ -26,7 +27,7 @@ export default async function getVideoById(id: string) {
         errorMessage: ""
     }
 
-    await fetch(`${SETTINGS.VIDEOS_API_URI}/${id}`)
+    await fetch(`${VIDEOS_URI}/${id}`)
         .then((response) => {
             returnedResponse.isSuccessful = isStatusGood(response.status);
             return response.json();

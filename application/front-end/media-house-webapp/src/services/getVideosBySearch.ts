@@ -15,6 +15,7 @@ export default async function getVideosBySearch(searchTerm: string) {
         errorMessage: ""
     }
 
+    /*
     await fetch(`${SETTINGS.VIDEOS_SEARCH_API_URI}/${searchTerm}`)
         .then((response) => {
             returnedResponse.isSuccessful = isStatusGood(response.status);
@@ -35,5 +36,6 @@ export default async function getVideosBySearch(searchTerm: string) {
     if (returnedResponse.videos.length === 0) {
         returnedResponse.errorMessage = Strings.NoVideosErrorMessage;
     }
+    */
     return returnedResponse;
 }

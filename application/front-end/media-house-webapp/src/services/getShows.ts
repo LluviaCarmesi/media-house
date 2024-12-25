@@ -1,7 +1,7 @@
-import * as SETTINGS from "../appSettings";
 import isStatusGood from "../utilities/isStatusGood";
 import * as Strings from "../strings/ENUSStrings";
 import type IShow from "../interfaces/IShow";
+import { SHOWS_URI } from "../appSettings";
 
 export default async function getShows() {
     const returnedResponse: {
@@ -15,7 +15,7 @@ export default async function getShows() {
         errorMessage: ""
     }
 
-    await fetch(`${SETTINGS.SHOWS_API_URI}`)
+    await fetch(SHOWS_URI)
         .then((response) => {
             returnedResponse.isSuccessful = isStatusGood(response.status);
             return response.json();
