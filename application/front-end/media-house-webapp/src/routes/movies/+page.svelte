@@ -7,7 +7,7 @@
     import "../../styles/common.css";
     import getFilteredVideos from "../../utilities/getFilteredVideos";
     import separateVideos from "../../utilities/separateVideos";
-    import { SERVER_VIDEOS_URI } from "../../appSettings";
+    import { VIDEOS_SERVER_URI } from "../../appSettings";
     import createDropdownOptions from "../../utilities/createDropdownOptions";
     import type IDropdownOption from "../../interfaces/IDropdownOption";
 
@@ -24,7 +24,7 @@
 
     let errorMessage = "";
     async function getVideosByTypeResponse() {
-        const videoResponse = await getVideosByType("movie");
+        const videoResponse = await getVideosByType("movies");
         if (videoResponse.isSuccessful) {
             videos = videoResponse.videos;
             tagsDropdownOptions = createDropdownOptions(videoResponse.tags);
@@ -84,7 +84,7 @@
                 <a href={"/video/" + video.id}>
                     <img
                         alt=""
-                        src={`${SERVER_VIDEOS_URI}/${video.previewPath}`}
+                        src={`${VIDEOS_SERVER_URI}/${video.previewPath}`}
                     />
                     <p>{video.title}</p>
                 </a>
@@ -95,7 +95,7 @@
                 <a href={"/video/" + video.id}>
                     <img
                         alt=""
-                        src={`${SERVER_VIDEOS_URI}/${video.previewPath}`}
+                        src={`${VIDEOS_SERVER_URI}/${video.previewPath}`}
                     />
                     <p>{video.title}</p>
                 </a>
@@ -106,7 +106,7 @@
                 <a href={"/video/" + video.id}>
                     <img
                         alt=""
-                        src={`${SERVER_VIDEOS_URI}/${video.previewPath}`}
+                        src={`${VIDEOS_SERVER_URI}/${video.previewPath}`}
                     />
                     <p>{video.title}</p>
                 </a>

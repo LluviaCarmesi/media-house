@@ -1,6 +1,6 @@
-import * as SETTINGS from "../appSettings";
 import isStatusGood from "../utilities/isStatusGood";
 import type INewVideo from "../interfaces/INewVideo";
+import { VIDEOS_URI } from "../appSettings";
 
 export default async function addVideo(
     item: INewVideo,
@@ -23,7 +23,7 @@ export default async function addVideo(
     bodyData.append("videoFileTotalChunks", videoFileTotalChunks.toString());
     bodyData.append("videoFile", chunk, item.videoFile.name);
 
-    await fetch(`${SETTINGS.ADD_VIDEO_API_URI}`, {
+    await fetch(VIDEOS_URI, {
         method: "POST",
         body: bodyData
     })

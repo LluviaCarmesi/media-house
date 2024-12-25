@@ -112,7 +112,7 @@ func GetVideoByID(videoID string) (models.Video, models.ServiceResponse) {
 	return video, response
 }
 
-func GetVideosByType(videoType string) ([]models.Video, models.ServiceResponse) {
+func GetVideosByType(videoType string) (models.VideosResponse, models.ServiceResponse) {
 	dbConnection := services.ConnectToDB()
 	defer dbConnection.Close()
 	videos := []models.Video{}
@@ -123,13 +123,21 @@ func GetVideosByType(videoType string) ([]models.Video, models.ServiceResponse) 
 	allVideoTags, videoTagsResponse := GetVideoTags()
 	if !videoTagsResponse.IsSuccessful {
 		response.ErrorMessage = "Error getting tags " + videoTagsResponse.ErrorMessage
-		return videos, response
+		return models.VideosResponse{
+				Videos:    videos,
+				VideoTags: allVideoTags,
+			},
+			response
 	}
 
 	results, err := dbConnection.Query(settings.GET_VIDEOS_BY_TYPE_QUERY + "'" + videoType + "'")
 	if err != nil {
 		response.ErrorMessage = "Error running query " + err.Error()
-		return videos, response
+		return models.VideosResponse{
+				Videos:    videos,
+				VideoTags: allVideoTags,
+			},
+			response
 	}
 
 	for results.Next() {
@@ -160,7 +168,11 @@ func GetVideosByType(videoType string) ([]models.Video, models.ServiceResponse) 
 	}
 	response.IsSuccessful = true
 
-	return videos, response
+	return models.VideosResponse{
+			Videos:    videos,
+			VideoTags: allVideoTags,
+		},
+		response
 }
 
 func GetVideosByShow(showID string) ([]models.Video, models.ServiceResponse) {

@@ -5,6 +5,7 @@ import (
 	"back-end/services/get"
 	"back-end/settings"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -20,27 +21,40 @@ func videos(w http.ResponseWriter, r *http.Request) {
 	enableSettings(&w)
 	switch r.Method {
 	case http.MethodGet:
-		getResponse := models.ServiceResponse{
+		response := models.ServiceResponse{
 			IsSuccessful: false,
 			ErrorMessage: "",
 		}
 		pathParts := strings.Split(r.URL.Path, "/")
 		videoID := pathParts[3]
 		if videoID == "" {
-			getResponse.ErrorMessage = "No video id provided"
+			response.ErrorMessage = "No video id provided"
 			w.WriteHeader(http.StatusBadRequest)
-			json.NewEncoder(w).Encode(getResponse)
+			json.NewEncoder(w).Encode(response)
 			return
 		}
-		video, getResponse := get.GetVideoByID(videoID)
-		if !getResponse.IsSuccessful {
+		video, response := get.GetVideoByID(videoID)
+		if !response.IsSuccessful {
 			w.WriteHeader(http.StatusBadRequest)
-			json.NewEncoder(w).Encode(getResponse)
+			json.NewEncoder(w).Encode(response)
 			return
 		}
 		json.NewEncoder(w).Encode(video)
 		break
 	case http.MethodPost:
+		response := models.ServiceResponse{
+			IsSuccessful: false,
+			ErrorMessage: "",
+		}
+		var video models.Video
+		err := json.NewDecoder(r.Body).Decode(&video)
+		fmt.Println(video)
+		if err != nil {
+			response.ErrorMessage = "Video was not properly decoded" + err.Error()
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(response)
+			return
+		}
 		break
 	case http.MethodDelete:
 		break
@@ -55,13 +69,13 @@ func movies(w http.ResponseWriter, r *http.Request) {
 	enableSettings(&w)
 	switch r.Method {
 	case http.MethodGet:
-		videos, getResponse := get.GetVideosByType("movie")
+		videosResponse, getResponse := get.GetVideosByType("movie")
 		if !getResponse.IsSuccessful {
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(getResponse)
 			return
 		}
-		json.NewEncoder(w).Encode(videos)
+		json.NewEncoder(w).Encode(videosResponse)
 		break
 	}
 }
