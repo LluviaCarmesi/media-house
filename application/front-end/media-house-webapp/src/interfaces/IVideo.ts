@@ -1,13 +1,13 @@
 export default interface IVideo {
-    id: string;
-    title: string;
-    type: string;
-    episode: string;
-    showID: number | null;
-    duration: string;
-    language: string;
-    tags: string[];
-    previewPath: string;
-    gifPreviewPath: string;
-    videoPath: string
+    Id: string;
+    Title: string;
+    Type: string;
+    Episode: string;
+    ShowID: number | null;
+    Duration: string;
+    Language: string;
+    Tags: string[];
+    PreviewPath: string;
+    GifPreviewPath: string;
+    VideoPath: string
 }

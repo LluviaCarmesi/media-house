@@ -64,25 +64,25 @@
         {:else}
             <div class="column">
                 {#each firstVideos as video}
-                    <a href={"/video/" + video.id}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.previewPath}`} />
-                        <p>{video.title}</p>
+                    <a href={"/video/" + video.Id}>
+                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
+                        <p>{video.Title}</p>
                     </a>
                 {/each}
             </div>
             <div class="column">
                 {#each secondVideos as video}
-                    <a href={"/video/" + video.id}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.previewPath}`} />
-                        <p>{video.title}</p>
+                    <a href={"/video/" + video.Id}>
+                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
+                        <p>{video.Title}</p>
                     </a>
                 {/each}
             </div>
             <div class="column">
                 {#each thirdVideos as video}
-                    <a href={"/video/" + video.id}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.previewPath}`} />
-                        <p>{video.title}</p>
+                    <a href={"/video/" + video.Id}>
+                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
+                        <p>{video.Title}</p>
                     </a>
                 {/each}
             </div>

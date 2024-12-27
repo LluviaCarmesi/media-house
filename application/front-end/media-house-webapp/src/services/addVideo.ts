@@ -11,17 +11,17 @@ export default async function addVideo(
     let doesErrorExist = false;
     let errorMessage = "";
     const bodyData = new FormData();
-    bodyData.append("previewFile", item.previewFile);
-    bodyData.append("title", item.title);
-    bodyData.append("type", item.type);
-    bodyData.append("episode", item.episode);
-    bodyData.append("showID", item.showID);
-    bodyData.append("duration", item.duration);
-    bodyData.append("tags", JSON.stringify(item.tags));
-    bodyData.append("language", item.language);
-    bodyData.append("videoFileChunkNumber", videoFileChunkNumber.toString());
-    bodyData.append("videoFileTotalChunks", videoFileTotalChunks.toString());
-    bodyData.append("videoFile", chunk, item.videoFile.name);
+    bodyData.append("PreviewFile", item.PreviewFile);
+    bodyData.append("Title", item.Title);
+    bodyData.append("Type", item.Type);
+    bodyData.append("Episode", item.Episode);
+    bodyData.append("ShowID", item.ShowID);
+    bodyData.append("Duration", item.Duration);
+    bodyData.append("Tags", JSON.stringify(item.Tags));
+    bodyData.append("Language", item.Language);
+    bodyData.append("VideoFileChunkNumber", videoFileChunkNumber.toString());
+    bodyData.append("VideoFileTotalChunks", videoFileTotalChunks.toString());
+    bodyData.append("VideoFile", chunk, item.VideoFile.name);
 
     await fetch(VIDEOS_URI, {
         method: "POST",

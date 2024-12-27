@@ -1,4 +1,4 @@
 export default interface IDropdownOption {
-    value: string,
-    label: string
+    Value: string,
+    Label: string
 }

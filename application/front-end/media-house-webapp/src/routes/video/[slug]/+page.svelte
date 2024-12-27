@@ -6,12 +6,12 @@
     import { VIDEOS_SERVER_URI } from "../../../appSettings";
 
     let video = {
-        id: "",
-        title: "",
-        type: "",
-        tags: [""],
-        previewPath: "",
-        videoPath: "",
+        Id: "",
+        Title: "",
+        Type: "",
+        Tags: [""],
+        PreviewPath: "",
+        VideoPath: "",
     };
     let isLoading = true;
     const loadingMessage = "Loading...";
@@ -35,12 +35,12 @@
     {#if isLoading}
         <h1>{loadingMessage}</h1>
     {:else}
-        <h1>{video.title}</h1>
+        <h1>{video.Title}</h1>
         <h1>{errorMessage}</h1>
         <video controls>
             <source
                 id="videoSource"
-                src={`${VIDEOS_SERVER_URI}/${video.videoPath}`}
+                src={`${VIDEOS_SERVER_URI}/${video.VideoPath}`}
                 type="video/mp4"
             />
             Your browser doesn't support videos
