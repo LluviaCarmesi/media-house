@@ -81,34 +81,34 @@
     {:else}
         <div class="column">
             {#each firstVideos as video}
-                <a href={"/video/" + video.id}>
+                <a href={"/video/" + video.Id}>
                     <img
                         alt=""
-                        src={`${VIDEOS_SERVER_URI}/${video.previewPath}`}
+                        src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`}
                     />
-                    <p>{video.title}</p>
+                    <p>{video.Title}</p>
                 </a>
             {/each}
         </div>
         <div class="column">
             {#each secondVideos as video}
-                <a href={"/video/" + video.id}>
+                <a href={"/video/" + video.Id}>
                     <img
                         alt=""
-                        src={`${VIDEOS_SERVER_URI}/${video.previewPath}`}
+                        src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`}
                     />
-                    <p>{video.title}</p>
+                    <p>{video.Title}</p>
                 </a>
             {/each}
         </div>
         <div class="column">
             {#each thirdVideos as video}
-                <a href={"/video/" + video.id}>
+                <a href={"/video/" + video.Id}>
                     <img
                         alt=""
-                        src={`${VIDEOS_SERVER_URI}/${video.previewPath}`}
+                        src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`}
                     />
-                    <p>{video.title}</p>
+                    <p>{video.Title}</p>
                 </a>
             {/each}
         </div>

@@ -4,10 +4,13 @@ import (
 	"back-end/models"
 	"back-end/services/get"
 	"back-end/settings"
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
 )
 
@@ -47,14 +50,65 @@ func videos(w http.ResponseWriter, r *http.Request) {
 			ErrorMessage: "",
 		}
 		var video models.Video
-		err := json.NewDecoder(r.Body).Decode(&video)
-		fmt.Println(video)
+
+		// parsing all form data
+		r.ParseMultipartForm(50 << 20) // 50MB limit
+		videoFile, videoFileHeader, err := r.FormFile("VideoFile")
 		if err != nil {
-			response.ErrorMessage = "Video was not properly decoded" + err.Error()
+			response.ErrorMessage = "Video File is not proper: " + err.Error()
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)
 			return
 		}
+		defer videoFile.Close()
+		var videoFileBuffer bytes.Buffer
+		_, err = io.Copy(&videoFileBuffer, videoFile)
+		if err != nil {
+			response.ErrorMessage = "Video File can't be read: " + err.Error()
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(response)
+			return
+		}
+		video.VideoFile = videoFileBuffer.Bytes()
+		video.VideoFileName = videoFileHeader.Filename
+
+		previewFile, previewFileHeader, err := r.FormFile("PreviewFile")
+		if err != nil {
+			response.ErrorMessage = "Preview File is not proper: " + err.Error()
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(response)
+			return
+		}
+		defer previewFile.Close()
+		var previewFileBuffer bytes.Buffer
+		_, err = io.Copy(&previewFileBuffer, previewFile)
+		if err != nil {
+			response.ErrorMessage = "Preview File can't be read: " + err.Error()
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(response)
+			return
+		}
+		video.PreviewFile = previewFileBuffer.Bytes()
+		video.PreviewFileName = previewFileHeader.Filename
+
+		showIDInt, err := strconv.Atoi(r.FormValue("ShowID"))
+		if err != nil {
+			response.ErrorMessage = "Show ID is not an int: " + err.Error()
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(response)
+			return
+		}
+		video.ID = ""
+		video.Title = r.FormValue("Title")
+		video.Type = r.FormValue("Type")
+		video.Episode = r.FormValue("Episode")
+		video.ShowID = showIDInt
+		video.Duration = r.FormValue("Duration")
+		video.Language = r.FormValue("Language")
+		video.Tags = r.Form["Tags"]
+
+		fmt.Println(video)
+		json.NewEncoder(w).Encode(response)
 		break
 	case http.MethodDelete:
 		break

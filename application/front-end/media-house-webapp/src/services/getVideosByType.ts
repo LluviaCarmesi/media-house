@@ -27,9 +27,8 @@ export default async function getVideosByType(type: string) {
                 returnedResponse.errorMessage = result.response;
             }
             else {
-                returnedResponse.videos = result.videos;
-                returnedResponse.tags = result.tags;
-                console.log(result);
+                returnedResponse.videos = result.Videos;
+                returnedResponse.tags = result.VideoTags;
             }
         })
         .catch((error) => {
@@ -37,6 +36,7 @@ export default async function getVideosByType(type: string) {
             console.log(error);
         });
     if (returnedResponse.videos.length === 0) {
+        returnedResponse.isSuccessful = false;
         returnedResponse.errorMessage = Strings.NoVideosErrorMessage;
     }
     return returnedResponse;

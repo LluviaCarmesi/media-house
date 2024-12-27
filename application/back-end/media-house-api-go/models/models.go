@@ -17,10 +17,12 @@ type Video struct {
 	PreviewPath string `json:preview_path`
 	VideoPath   string `json:video_path`
 	// custom attributes
-	PreviewFile []byte   `json:preview_path`
-	VideoFile   []byte   `json:video_file`
-	Tags        []string `json:tags`
-	ShowTitle   string   `json:show_title`
+	PreviewFile     []byte   `json:preview_file`
+	VideoFile       []byte   `json:video_file`
+	PreviewFileName string   `json:preview_file_name`
+	VideoFileName   string   `json:video_file_name`
+	Tags            []string `json:tags`
+	ShowTitle       string   `json:show_title`
 }
 
 type VideoChunks struct {

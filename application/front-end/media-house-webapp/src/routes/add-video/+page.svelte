@@ -4,7 +4,7 @@
     import TextField from "../../components/TextField.svelte";
     import Dropdown from "../../components/Dropdown.svelte";
     import FilePicker from "../../components/FilePicker.svelte";
-    import { CHUNK_SIZE, TYPES_OPTIONS } from "../../appSettings";
+    import { CHUNK_SIZE, TYPES, TYPES_OPTIONS } from "../../appSettings";
     import getShows from "../../services/getShows";
     import type IDropdownOption from "../../interfaces/IDropdownOption";
     import addVideo from "../../services/addVideo";
@@ -15,17 +15,20 @@
     let errorMessage = "";
     let isSuccessful = false;
 
-    const newVideoItem: INewVideo = {
-        title: "",
-        type: "",
-        episode: "",
-        showID: "",
-        language: "",
-        duration: "",
-        tagsString: "",
-        tags: [],
-        previewFile: null,
-        videoFile: null,
+    const newVideoItem: any = {
+        Title: "",
+        Type: "",
+        Episode: "",
+        ShowID: 0,
+        ShowTitle: "",
+        Language: "",
+        Duration: "",
+        TagsString: "",
+        Tags: [],
+        VideoPath: "",
+        PreviewPath: "",
+        PreviewFile: null,
+        VideoFile: null,
     };
 
     let progress = "";
@@ -35,8 +38,8 @@
         if (showsResponse.isSuccessful) {
             for (let i = 0; i < showsResponse.shows.length; i++) {
                 showDropdownOptions.push({
-                    value: showsResponse.shows[i].id,
-                    label: showsResponse.shows[i].title,
+                    Value: showsResponse.shows[i].Id,
+                    Label: showsResponse.shows[i].Title,
                 });
             }
         } else {
@@ -61,14 +64,14 @@
     }
 
     async function submitVideo() {
-        newVideoItem.tags = newVideoItem.tagsString.split(",");
+        newVideoItem.Tags = newVideoItem.TagsString.split(",");
 
         const videoFileTotalChunks = Math.ceil(
-            newVideoItem.videoFile.size / CHUNK_SIZE,
+            newVideoItem.VideoFile.size / CHUNK_SIZE,
         );
-        for (let i = 0; i < newVideoItem.videoFile.size; i += CHUNK_SIZE) {
-            const end = Math.min(i + CHUNK_SIZE, newVideoItem.videoFile.size);
-            const chunk = newVideoItem.videoFile.slice(i, end);
+        for (let i = 0; i < newVideoItem.VideoFile.size; i += CHUNK_SIZE) {
+            const end = Math.min(i + CHUNK_SIZE, newVideoItem.VideoFile.size);
+            const chunk = newVideoItem.VideoFile.slice(i, end);
             const videoFileChunkNumber = Math.floor(i / CHUNK_SIZE);
             progress = (
                 (videoFileChunkNumber / videoFileTotalChunks) *
@@ -87,6 +90,7 @@
             } else {
                 errorMessage = "";
             }
+            break;
         }
         progress = "";
     }
@@ -121,34 +125,34 @@
     <div class="form">
         <div class="centerContainer">
             <TextField
-                inputID="title"
-                currentValue={newVideoItem.title}
+                inputID="Title"
+                currentValue={newVideoItem.Title}
                 fieldLabel="Title"
                 onChangeTextField={handleTextChange}
             />
         </div>
         <div class="centerContainer">
             <Dropdown
-                inputID="type"
-                currentValue={newVideoItem.type}
+                inputID="Type"
+                currentValue={newVideoItem.Type}
                 fieldLabel="Type"
                 onDropdownChange={handleDropdownChange}
                 dropdownOptions={TYPES_OPTIONS}
             />
         </div>
-        {#if newVideoItem.type == "show"}
+        {#if newVideoItem.Type == TYPES.SHOW.value}
             <div class="centerContainer">
                 <TextField
-                    inputID="episode"
-                    currentValue={newVideoItem.episode}
+                    inputID="Episode"
+                    currentValue={newVideoItem.Episode}
                     fieldLabel="Episode Number"
                     onChangeTextField={handleTextChange}
                 />
             </div>
             <div class="centerContainer">
                 <Dropdown
-                    inputID="showID"
-                    currentValue={newVideoItem.showID}
+                    inputID="ShowID"
+                    currentValue={newVideoItem.ShowID}
                     fieldLabel="Show"
                     onDropdownChange={handleDropdownChange}
                     dropdownOptions={[]}
@@ -157,38 +161,38 @@
         {/if}
         <div class="centerContainer">
             <TextField
-                inputID="language"
-                currentValue={newVideoItem.language}
+                inputID="Language"
+                currentValue={newVideoItem.Language}
                 fieldLabel="Language"
                 onChangeTextField={handleTextChange}
             />
         </div>
         <div class="centerContainer">
             <TextField
-                inputID="duration"
-                currentValue={newVideoItem.duration}
+                inputID="Duration"
+                currentValue={newVideoItem.Duration}
                 fieldLabel="Duration"
                 onChangeTextField={handleTextChange}
             />
         </div>
         <div class="centerContainer">
             <TextField
-                inputID="tagsString"
-                currentValue={newVideoItem.tagsString}
+                inputID="TagsString"
+                currentValue={newVideoItem.TagsString}
                 fieldLabel="Tags"
                 onChangeTextField={handleTextChange}
             />
         </div>
         <div class="centerContainer">
             <FilePicker
-                inputID="previewFile"
+                inputID="PreviewFile"
                 fieldLabel="Attach Preview"
                 onFileChange={handleFileUpload}
             />
         </div>
         <div class="centerContainer">
             <FilePicker
-                inputID="videoFile"
+                inputID="VideoFile"
                 fieldLabel="Attach Video"
                 onFileChange={handleFileUpload}
             />

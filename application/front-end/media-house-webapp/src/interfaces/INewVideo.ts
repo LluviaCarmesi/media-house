@@ -1,12 +1,15 @@
 export default interface INewVideo {
-    title: string;
-    type: string;
-    episode: string;
-    showID: string;
-    duration: string;
-    language: string;
-    tagsString: string;
-    tags: string[];
-    previewFile: any;
-    videoFile: any;
+    Title: string;
+    Type: string;
+    Episode: string;
+    ShowID: string;
+    ShowTitle: string;
+    Duration: string;
+    Language: string;
+    TagsString: string;
+    Tags: string[];
+    PreviewPath: string;
+    VideoPath: string;
+    PreviewFile: any;
+    VideoFile: any;
 }
