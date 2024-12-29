@@ -3,10 +3,10 @@ package main
 import (
 	"back-end/models"
 	"back-end/services/get"
+	"back-end/services/post"
 	"back-end/settings"
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -26,12 +26,12 @@ func videos(w http.ResponseWriter, r *http.Request) {
 	case http.MethodGet:
 		response := models.ServiceResponse{
 			IsSuccessful: false,
-			ErrorMessage: "",
+			Message:      "",
 		}
 		pathParts := strings.Split(r.URL.Path, "/")
 		videoID := pathParts[3]
 		if videoID == "" {
-			response.ErrorMessage = "No video id provided"
+			response.Message = "No video id provided"
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)
 			return
@@ -47,15 +47,16 @@ func videos(w http.ResponseWriter, r *http.Request) {
 	case http.MethodPost:
 		response := models.ServiceResponse{
 			IsSuccessful: false,
-			ErrorMessage: "",
+			Message:      "",
 		}
 		var video models.Video
+		var videoChunks models.VideoChunks
 
 		// parsing all form data
 		r.ParseMultipartForm(50 << 20) // 50MB limit
 		videoFile, videoFileHeader, err := r.FormFile("VideoFile")
 		if err != nil {
-			response.ErrorMessage = "Video File is not proper: " + err.Error()
+			response.Message = "Video File is not proper: " + err.Error()
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)
 			return
@@ -64,7 +65,7 @@ func videos(w http.ResponseWriter, r *http.Request) {
 		var videoFileBuffer bytes.Buffer
 		_, err = io.Copy(&videoFileBuffer, videoFile)
 		if err != nil {
-			response.ErrorMessage = "Video File can't be read: " + err.Error()
+			response.Message = "Video File can't be read: " + err.Error()
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)
 			return
@@ -74,7 +75,7 @@ func videos(w http.ResponseWriter, r *http.Request) {
 
 		previewFile, previewFileHeader, err := r.FormFile("PreviewFile")
 		if err != nil {
-			response.ErrorMessage = "Preview File is not proper: " + err.Error()
+			response.Message = "Preview File is not proper: " + err.Error()
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)
 			return
@@ -83,7 +84,7 @@ func videos(w http.ResponseWriter, r *http.Request) {
 		var previewFileBuffer bytes.Buffer
 		_, err = io.Copy(&previewFileBuffer, previewFile)
 		if err != nil {
-			response.ErrorMessage = "Preview File can't be read: " + err.Error()
+			response.Message = "Preview File can't be read: " + err.Error()
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)
 			return
@@ -93,7 +94,7 @@ func videos(w http.ResponseWriter, r *http.Request) {
 
 		showIDInt, err := strconv.Atoi(r.FormValue("ShowID"))
 		if err != nil {
-			response.ErrorMessage = "Show ID is not an int: " + err.Error()
+			response.Message = "Show ID is not an int: " + err.Error()
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)
 			return
@@ -107,7 +108,29 @@ func videos(w http.ResponseWriter, r *http.Request) {
 		video.Language = r.FormValue("Language")
 		video.Tags = r.Form["Tags"]
 
-		fmt.Println(video)
+		videoFileChunksNumberInt, err := strconv.Atoi(r.FormValue("VideoFileChunkNumber"))
+		if err != nil {
+			response.Message = "VideoChunkNumber is not an int: " + err.Error()
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(response)
+			return
+		}
+		videoFileTotalChunksInt, err := strconv.Atoi(r.FormValue("VideoFileTotalChunks"))
+		if err != nil {
+			response.Message = "VideoTotalChunks is not an int: " + err.Error()
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(response)
+			return
+		}
+		videoChunks.VideoFileChunkNumber = videoFileChunksNumberInt
+		videoChunks.VideoFileTotalChunks = videoFileTotalChunksInt
+
+		addVideoResponse := post.AddVideoFiles(video, videoChunks)
+		if !addVideoResponse.IsSuccessful {
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(addVideoResponse)
+			return
+		}
 		json.NewEncoder(w).Encode(response)
 		break
 	case http.MethodDelete:
@@ -140,12 +163,12 @@ func shows(w http.ResponseWriter, r *http.Request) {
 	case http.MethodGet:
 		getResponse := models.ServiceResponse{
 			IsSuccessful: false,
-			ErrorMessage: "",
+			Message:      "",
 		}
 		pathParts := strings.Split(r.URL.Path, "/")
 		showID := pathParts[4]
 		if showID == "" {
-			getResponse.ErrorMessage = "No show id provided"
+			getResponse.Message = "No show id provided"
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(getResponse)
 			return

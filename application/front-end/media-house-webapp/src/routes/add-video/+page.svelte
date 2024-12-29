@@ -90,7 +90,6 @@
             } else {
                 errorMessage = "";
             }
-            break;
         }
         progress = "";
     }
