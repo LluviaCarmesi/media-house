@@ -11,23 +11,22 @@ export default async function getVideoById(id: string) {
     }
         = {
         video: {
-            id: "",
-            title: "",
-            type: "",
-            episode: "",
-            showID: 0,
-            language: "",
-            duration: "",
-            tags: [""],
-            previewPath: "",
-            gifPreviewPath: "",
-            videoPath: "",
+            ID: "",
+            Title: "",
+            Type: "",
+            Episode: "",
+            ShowID: 0,
+            Language: "",
+            Duration: "",
+            Tags: [""],
+            PreviewPath: "",
+            VideoPath: "",
         },
         isSuccessful: false,
         errorMessage: ""
     }
 
-    await fetch(`${VIDEOS_URI}/${id}`)
+    await fetch(`${VIDEOS_URI}${id}`)
         .then((response) => {
             returnedResponse.isSuccessful = isStatusGood(response.status);
             return response.json();
@@ -44,7 +43,7 @@ export default async function getVideoById(id: string) {
             returnedResponse.errorMessage = error;
             console.log(error);
         });
-    if (!returnedResponse.video.id) {
+    if (!returnedResponse.video.ID) {
         returnedResponse.errorMessage = Strings.NoVideosErrorMessage;
     }
     return returnedResponse;

@@ -103,7 +103,7 @@ func videos(w http.ResponseWriter, r *http.Request) {
 		video.Title = r.FormValue("Title")
 		video.Type = r.FormValue("Type")
 		video.Episode = r.FormValue("Episode")
-		video.ShowID = showIDInt
+		*video.ShowID = showIDInt
 		video.Duration = r.FormValue("Duration")
 		video.Language = r.FormValue("Language")
 		video.Tags = r.Form["Tags"]

@@ -31,7 +31,7 @@ func addVideo(video models.Video) models.ServiceResponse {
 		video.Title,
 		video.Type,
 		video.Episode,
-		utilities.CheckShowID(video.ShowID),
+		video.ShowID,
 		video.Duration,
 		video.Language,
 		video.PreviewPath,

@@ -1,5 +1,5 @@
 export default interface IVideo {
-    Id: string;
+    ID: string;
     Title: string;
     Type: string;
     Episode: string;
@@ -8,6 +8,5 @@ export default interface IVideo {
     Language: string;
     Tags: string[];
     PreviewPath: string;
-    GifPreviewPath: string;
     VideoPath: string
 }
