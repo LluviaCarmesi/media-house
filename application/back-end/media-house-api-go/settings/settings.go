@@ -3,6 +3,7 @@ package settings
 // URI paths
 const API_ROOT = "/api/"
 const VIDEOS_PATH = API_ROOT + "videos/"
+const VIDEOS_SEARCH_PATH = VIDEOS_PATH + "search/"
 const MOVIES_PATH = VIDEOS_PATH + "movies/"
 const SHOWS_PATH = VIDEOS_PATH + "shows/"
 
@@ -16,6 +17,7 @@ const VIDEO_FILES_TEMP_DIRECTORY = "/home/meradil/Downloads/Temp/"
 //const VIDEO_FILES_TEMP_DIRECTORY = ""
 
 // queries
+const GET_ALL_VIDEOS_QUERY = "SELECT * FROM videos;"
 const GET_VIDEO_BY_ID_QUERY = "SELECT * FROM videos WHERE id = "
 const GET_VIDEOS_BY_TYPE_QUERY = "SELECT * FROM videos WHERE type = "
 const GET_VIDEOS_BY_SHOW_ID_QUERY = "SELECT * FROM videos WHERE show_id = "
