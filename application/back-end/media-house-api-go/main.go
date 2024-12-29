@@ -12,6 +12,8 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/google/uuid"
 )
 
 func enableSettings(w *http.ResponseWriter) {
@@ -99,14 +101,17 @@ func videos(w http.ResponseWriter, r *http.Request) {
 			json.NewEncoder(w).Encode(response)
 			return
 		}
-		video.ID = ""
+		video.ID = uuid.New()
 		video.Title = r.FormValue("Title")
 		video.Type = r.FormValue("Type")
 		video.Episode = r.FormValue("Episode")
-		*video.ShowID = showIDInt
 		video.Duration = r.FormValue("Duration")
 		video.Language = r.FormValue("Language")
 		video.Tags = r.Form["Tags"]
+
+		if showIDInt != 0 {
+			video.ShowID = &showIDInt
+		}
 
 		videoFileChunksNumberInt, err := strconv.Atoi(r.FormValue("VideoFileChunkNumber"))
 		if err != nil {
@@ -184,10 +189,38 @@ func shows(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func search(w http.ResponseWriter, r *http.Request) {
+	enableSettings(&w)
+	switch r.Method {
+	case http.MethodGet:
+		getResponse := models.ServiceResponse{
+			IsSuccessful: false,
+			Message:      "",
+		}
+		pathParts := strings.Split(r.URL.Path, "/")
+		searchTerm := pathParts[4]
+		if searchTerm == "" {
+			getResponse.Message = "No search term provided"
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(getResponse)
+			return
+		}
+		videos, getResponse := get.GetVideosBySearch(searchTerm)
+		if !getResponse.IsSuccessful {
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(getResponse)
+			return
+		}
+		json.NewEncoder(w).Encode(videos)
+		break
+	}
+}
+
 func main() {
 	http.HandleFunc(settings.VIDEOS_PATH, videos)
 	http.HandleFunc(settings.MOVIES_PATH, movies)
 	http.HandleFunc(settings.SHOWS_PATH, shows)
+	http.HandleFunc(settings.VIDEOS_SEARCH_PATH, search)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

@@ -4,7 +4,73 @@ import (
 	"back-end/models"
 	"back-end/services"
 	"back-end/settings"
+	"back-end/utilities"
 )
+
+func getAllVideos() ([]models.Video, models.ServiceResponse) {
+	dbConnection := services.ConnectToDB()
+	defer dbConnection.Close()
+	videos := []models.Video{}
+	response := models.ServiceResponse{
+		IsSuccessful: false,
+		Message:      "",
+	}
+	allVideoTags, videoTagsResponse := GetVideoTags()
+	if !videoTagsResponse.IsSuccessful {
+		response.Message = "Error getting tags " + videoTagsResponse.Message
+		return videos, response
+	}
+	allShows, showsResponse := GetVideoTags()
+	if !showsResponse.IsSuccessful {
+		response.Message = "Error getting tags " + showsResponse.Message
+		return videos, response
+	}
+
+	results, err := dbConnection.Query(settings.GET_ALL_VIDEOS_QUERY)
+	if err != nil {
+		response.Message = "Error running query " + err.Error()
+		return videos, response
+	}
+
+	for results.Next() {
+		var video = models.Video{}
+
+		err := results.Scan(
+			&video.ID,
+			&video.Title,
+			&video.Type,
+			&video.Episode,
+			&video.ShowID,
+			&video.Duration,
+			&video.Language,
+			&video.PreviewPath,
+			&video.VideoPath,
+		)
+		if err != nil {
+			response.Message = "Error scanning row " + err.Error()
+		}
+		currentVideoTags := []string{}
+		for i := 0; i < len(allVideoTags); i++ {
+			if video.ID == allVideoTags[i].VideoID {
+				currentVideoTags = append(currentVideoTags, allVideoTags[i].Title)
+			}
+		}
+		currentVideoShow := ""
+		if video.ShowID != nil {
+			for i := 0; i < len(allShows); i++ {
+				if *video.ShowID == allShows[i].ID {
+					currentVideoShow = allShows[i].Title
+				}
+			}
+		}
+		video.Tags = currentVideoTags
+		video.ShowTitle = currentVideoShow
+		videos = append(videos, video)
+	}
+	response.IsSuccessful = true
+
+	return videos, response
+}
 
 func GetShows() ([]models.Show, models.ServiceResponse) {
 	dbConnection := services.ConnectToDB()
@@ -172,6 +238,31 @@ func GetVideosByType(videoType string) (models.VideosResponse, models.ServiceRes
 			VideoTags: allVideoTags,
 		},
 		response
+}
+
+func GetVideosBySearch(searchTerm string) ([]models.Video, models.ServiceResponse) {
+	dbConnection := services.ConnectToDB()
+	defer dbConnection.Close()
+	videos := []models.Video{}
+	response := models.ServiceResponse{
+		IsSuccessful: false,
+		Message:      "",
+	}
+	allVideos, allVideosResponse := getAllVideos()
+	if !allVideosResponse.IsSuccessful {
+		response.Message = "Error getting all videos " + allVideosResponse.Message
+		return videos, response
+	}
+
+	for i := 0; i < len(allVideos); i++ {
+		currentVideo := allVideos[i]
+		if utilities.IsSearchTermInVideo(searchTerm, currentVideo) {
+			videos = append(videos, currentVideo)
+		}
+	}
+	response.IsSuccessful = true
+
+	return videos, response
 }
 
 func GetVideosByShow(showID string) ([]models.Video, models.ServiceResponse) {

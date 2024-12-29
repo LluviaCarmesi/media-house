@@ -10,8 +10,6 @@ import (
 	"log"
 	"os"
 	"strconv"
-
-	"github.com/google/uuid"
 )
 
 func addVideo(video models.Video) models.ServiceResponse {
@@ -19,15 +17,14 @@ func addVideo(video models.Video) models.ServiceResponse {
 		IsSuccessful: false,
 		Message:      "",
 	}
-
 	dbConnection := services.ConnectToDB()
 	defer dbConnection.Close()
 
 	query := settings.INSERT_VIDEO_QUERY
-	results, err := dbConnection.ExecContext(
+	_, err := dbConnection.ExecContext(
 		context.Background(),
 		query,
-		uuid.New(),
+		video.ID,
 		video.Title,
 		video.Type,
 		video.Episode,
@@ -42,13 +39,21 @@ func addVideo(video models.Video) models.ServiceResponse {
 		return response
 	}
 
-	insertedID, err := results.LastInsertId()
-	if err != nil {
-		log.Fatalf("Impossible to retrieve last inserted id for videos: %s", err.Error())
+	log.Printf("Inserted id for videos: %d", video.ID)
+
+	for i := 0; i < len(video.Tags); i++ {
+		addVideoTagResponse := AddVideoTag(models.VideoTag{
+			Title:   video.Tags[i],
+			VideoID: video.ID,
+		})
+		if !addVideoTagResponse.IsSuccessful {
+			response.Message = addVideoTagResponse.Message
+			return response
+		}
 	}
-	log.Printf("Inserted id for videos: %d", insertedID)
 
 	response.IsSuccessful = true
+	response.Message = "Video was added successfully"
 	return response
 }
 
@@ -163,6 +168,8 @@ func AddVideoTag(videoTag models.VideoTag) models.ServiceResponse {
 	}
 	log.Printf("Inserted id for video_tags: %d", insertedID)
 
+	response.IsSuccessful = true
+	response.Message = "Video Tag was added successfully"
 	return response
 }
 

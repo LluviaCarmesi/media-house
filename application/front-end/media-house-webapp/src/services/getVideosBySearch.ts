@@ -1,7 +1,7 @@
-import * as SETTINGS from "../appSettings";
 import isStatusGood from "../utilities/isStatusGood";
 import * as Strings from "../strings/ENUSStrings";
 import type IVideo from "../interfaces/IVideo";
+import { VIDEOS_SEARCH_URI } from "../appSettings";
 
 export default async function getVideosBySearch(searchTerm: string) {
     const returnedResponse: {
@@ -15,8 +15,7 @@ export default async function getVideosBySearch(searchTerm: string) {
         errorMessage: ""
     }
 
-    /*
-    await fetch(`${SETTINGS.VIDEOS_SEARCH_API_URI}${searchTerm}`)
+    await fetch(`${VIDEOS_SEARCH_URI}${searchTerm}`)
         .then((response) => {
             returnedResponse.isSuccessful = isStatusGood(response.status);
             return response.json();
@@ -36,6 +35,5 @@ export default async function getVideosBySearch(searchTerm: string) {
     if (returnedResponse.videos.length === 0) {
         returnedResponse.errorMessage = Strings.NoVideosErrorMessage;
     }
-    */
     return returnedResponse;
 }

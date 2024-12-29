@@ -3,6 +3,7 @@ package utilities
 import (
 	"back-end/models"
 	"back-end/settings"
+	"strings"
 )
 
 func CheckVideoModel(video models.Video) models.ModelCheckResponse {
@@ -49,4 +50,20 @@ func CheckVideoModel(video models.Video) models.ModelCheckResponse {
 
 	response.IsValid = true
 	return response
+}
+
+func IsSearchTermInVideo(searchTerm string, video models.Video) bool {
+	doesVideoHaveSearchTerm := false
+	if strings.Contains(strings.ToLower(video.Title), searchTerm) {
+		doesVideoHaveSearchTerm = true
+	}
+
+	for i := 0; i < len(video.Tags); i++ {
+		currentTag := strings.ToLower(video.Tags[i])
+		if strings.Contains(currentTag, searchTerm) {
+			doesVideoHaveSearchTerm = true
+		}
+	}
+
+	return doesVideoHaveSearchTerm
 }
