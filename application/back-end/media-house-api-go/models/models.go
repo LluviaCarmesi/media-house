@@ -11,7 +11,7 @@ type Video struct {
 	Title       string `json:title`
 	Type        string `json:type`
 	Episode     string `json:episode`
-	ShowID      int    `json:show_id`
+	ShowID      *int   `json:show_id`
 	Duration    string `json:duration`
 	Language    string `json:language`
 	PreviewPath string `json:preview_path`

@@ -41,7 +41,7 @@ func CheckVideoModel(video models.Video) models.ModelCheckResponse {
 			response.Response = "Episode is required"
 			return response
 		}
-		if video.ShowID == 0 {
+		if *video.ShowID == 0 || video.ShowID == nil {
 			response.Response = "Show is required"
 			return response
 		}
@@ -49,11 +49,4 @@ func CheckVideoModel(video models.Video) models.ModelCheckResponse {
 
 	response.IsValid = true
 	return response
-}
-
-func CheckShowID(showID int) *int {
-	if showID == 0 {
-		return nil
-	}
-	return &showID
 }

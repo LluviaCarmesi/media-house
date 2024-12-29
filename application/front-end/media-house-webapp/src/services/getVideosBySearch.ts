@@ -16,7 +16,7 @@ export default async function getVideosBySearch(searchTerm: string) {
     }
 
     /*
-    await fetch(`${SETTINGS.VIDEOS_SEARCH_API_URI}/${searchTerm}`)
+    await fetch(`${SETTINGS.VIDEOS_SEARCH_API_URI}${searchTerm}`)
         .then((response) => {
             returnedResponse.isSuccessful = isStatusGood(response.status);
             return response.json();

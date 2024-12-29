@@ -91,7 +91,6 @@ func GetVideoByID(videoID string) (models.Video, models.ServiceResponse) {
 	}
 
 	for results.Next() {
-
 		err := results.Scan(
 			&video.ID,
 			&video.Title,
@@ -225,7 +224,7 @@ func GetVideosByShow(showID string) ([]models.Video, models.ServiceResponse) {
 		}
 		currentVideoShow := ""
 		for i := 0; i < len(allShows); i++ {
-			if video.ShowID == allShows[i].ID {
+			if *video.ShowID == allShows[i].ID {
 				currentVideoShow = allShows[i].Title
 			}
 		}
