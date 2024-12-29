@@ -2,7 +2,7 @@ package models
 
 type ServiceResponse struct {
 	IsSuccessful bool   `json:is_successful`
-	ErrorMessage string `json:error_message`
+	Message      string `json:error_message`
 }
 
 type Video struct {
@@ -26,8 +26,8 @@ type Video struct {
 }
 
 type VideoChunks struct {
-	VideoChunkNumber int `json:video_chunk_number`
-	videoTotalChunks int `json:video_total_chunks`
+	VideoFileChunkNumber int `json:video_file_chunk_number`
+	VideoFileTotalChunks int `json:video_file_total_chunks`
 }
 
 type VideoTag struct {

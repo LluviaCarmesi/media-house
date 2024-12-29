@@ -50,3 +50,10 @@ func CheckVideoModel(video models.Video) models.ModelCheckResponse {
 	response.IsValid = true
 	return response
 }
+
+func CheckShowID(showID int) *int {
+	if showID == 0 {
+		return nil
+	}
+	return &showID
+}

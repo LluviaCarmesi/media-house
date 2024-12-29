@@ -12,12 +12,12 @@ func GetShows() ([]models.Show, models.ServiceResponse) {
 	shows := []models.Show{}
 	response := models.ServiceResponse{
 		IsSuccessful: false,
-		ErrorMessage: "",
+		Message:      "",
 	}
 
 	results, err := dbConnection.Query(settings.GET_SHOWS_QUERY)
 	if err != nil {
-		response.ErrorMessage = "Error running query " + err.Error()
+		response.Message = "Error running query " + err.Error()
 		return shows, response
 	}
 
@@ -30,7 +30,7 @@ func GetShows() ([]models.Show, models.ServiceResponse) {
 			&show.PreviewPath,
 		)
 		if err != nil {
-			response.ErrorMessage = "Error scanning row " + err.Error()
+			response.Message = "Error scanning row " + err.Error()
 		}
 
 		shows = append(shows, show)
@@ -46,12 +46,12 @@ func GetVideoTags() ([]models.VideoTag, models.ServiceResponse) {
 	videoTags := []models.VideoTag{}
 	response := models.ServiceResponse{
 		IsSuccessful: false,
-		ErrorMessage: "",
+		Message:      "",
 	}
 
 	results, err := dbConnection.Query(settings.GET_VIDEO_TAGS_QUERY)
 	if err != nil {
-		response.ErrorMessage = "Error running query " + err.Error()
+		response.Message = "Error running query " + err.Error()
 		return videoTags, response
 	}
 
@@ -65,7 +65,7 @@ func GetVideoTags() ([]models.VideoTag, models.ServiceResponse) {
 			&videoTag.VideoID,
 		)
 		if err != nil {
-			response.ErrorMessage = "Error scanning row " + err.Error()
+			response.Message = "Error scanning row " + err.Error()
 		}
 
 		videoTags = append(videoTags, videoTag)
@@ -81,12 +81,12 @@ func GetVideoByID(videoID string) (models.Video, models.ServiceResponse) {
 	video := models.Video{}
 	response := models.ServiceResponse{
 		IsSuccessful: false,
-		ErrorMessage: "",
+		Message:      "",
 	}
 
 	results, err := dbConnection.Query(settings.GET_VIDEO_BY_ID_QUERY + "'" + videoID + "'")
 	if err != nil {
-		response.ErrorMessage = "Error running query " + err.Error()
+		response.Message = "Error running query " + err.Error()
 		return video, response
 	}
 
@@ -104,7 +104,7 @@ func GetVideoByID(videoID string) (models.Video, models.ServiceResponse) {
 			&video.VideoPath,
 		)
 		if err != nil {
-			response.ErrorMessage = "Error scanning row " + err.Error()
+			response.Message = "Error scanning row " + err.Error()
 		}
 	}
 	response.IsSuccessful = true
@@ -118,11 +118,11 @@ func GetVideosByType(videoType string) (models.VideosResponse, models.ServiceRes
 	videos := []models.Video{}
 	response := models.ServiceResponse{
 		IsSuccessful: false,
-		ErrorMessage: "",
+		Message:      "",
 	}
 	allVideoTags, videoTagsResponse := GetVideoTags()
 	if !videoTagsResponse.IsSuccessful {
-		response.ErrorMessage = "Error getting tags " + videoTagsResponse.ErrorMessage
+		response.Message = "Error getting tags " + videoTagsResponse.Message
 		return models.VideosResponse{
 				Videos:    videos,
 				VideoTags: allVideoTags,
@@ -132,7 +132,7 @@ func GetVideosByType(videoType string) (models.VideosResponse, models.ServiceRes
 
 	results, err := dbConnection.Query(settings.GET_VIDEOS_BY_TYPE_QUERY + "'" + videoType + "'")
 	if err != nil {
-		response.ErrorMessage = "Error running query " + err.Error()
+		response.Message = "Error running query " + err.Error()
 		return models.VideosResponse{
 				Videos:    videos,
 				VideoTags: allVideoTags,
@@ -155,7 +155,7 @@ func GetVideosByType(videoType string) (models.VideosResponse, models.ServiceRes
 			&video.VideoPath,
 		)
 		if err != nil {
-			response.ErrorMessage = "Error scanning row " + err.Error()
+			response.Message = "Error scanning row " + err.Error()
 		}
 		currentVideoTags := []string{}
 		for i := 0; i < len(allVideoTags); i++ {
@@ -181,22 +181,22 @@ func GetVideosByShow(showID string) ([]models.Video, models.ServiceResponse) {
 	videos := []models.Video{}
 	response := models.ServiceResponse{
 		IsSuccessful: false,
-		ErrorMessage: "",
+		Message:      "",
 	}
 	allVideoTags, videoTagsResponse := GetVideoTags()
 	if !videoTagsResponse.IsSuccessful {
-		response.ErrorMessage = "Error getting tags " + videoTagsResponse.ErrorMessage
+		response.Message = "Error getting tags " + videoTagsResponse.Message
 		return videos, response
 	}
 	allShows, showsResponse := GetVideoTags()
 	if !showsResponse.IsSuccessful {
-		response.ErrorMessage = "Error getting tags " + showsResponse.ErrorMessage
+		response.Message = "Error getting tags " + showsResponse.Message
 		return videos, response
 	}
 
 	results, err := dbConnection.Query(settings.GET_VIDEOS_BY_SHOW_ID_QUERY + "'" + showID + "'")
 	if err != nil {
-		response.ErrorMessage = "Error running query " + err.Error()
+		response.Message = "Error running query " + err.Error()
 		return videos, response
 	}
 
@@ -215,7 +215,7 @@ func GetVideosByShow(showID string) ([]models.Video, models.ServiceResponse) {
 			&video.VideoPath,
 		)
 		if err != nil {
-			response.ErrorMessage = "Error scanning row " + err.Error()
+			response.Message = "Error scanning row " + err.Error()
 		}
 		currentVideoTags := []string{}
 		for i := 0; i < len(allVideoTags); i++ {
