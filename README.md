@@ -14,4 +14,4 @@ MySQL is used as the database
 4. Allow deleting of a video
 5. Allow saving the search term in a cookie so that when user goes back, it will show their search results.
 6. When playing a video, have an edit button underneath that navigates to the edit video page for that video
-7. Allow paging on the home page
+7. Allow paging on all pages
