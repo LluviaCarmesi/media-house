@@ -50,6 +50,7 @@ type ModelCheckResponse struct {
 }
 
 type VideosResponse struct {
-	Videos    []Video    `json:videos`
-	VideoTags []VideoTag `json:video_tags`
+	Videos         []Video    `json:videos`
+	NumberOfVideos int        `json:number_of_videos`
+	VideoTags      []VideoTag `json:video_tags`
 }

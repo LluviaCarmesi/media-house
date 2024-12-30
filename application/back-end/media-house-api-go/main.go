@@ -33,9 +33,15 @@ func videos(w http.ResponseWriter, r *http.Request) {
 		pathParts := strings.Split(r.URL.Path, "/")
 		videoID := pathParts[3]
 		if videoID == "" {
-			response.Message = "No video id provided"
-			w.WriteHeader(http.StatusBadRequest)
-			json.NewEncoder(w).Encode(response)
+			limitValue := r.URL.Query().Get("limit")
+			offsetValue := r.URL.Query().Get("offset")
+			videosResponse, serviceResponse := get.GetAllVideos(limitValue, offsetValue)
+			if !serviceResponse.IsSuccessful {
+				w.WriteHeader(http.StatusBadRequest)
+				json.NewEncoder(w).Encode(serviceResponse)
+				return
+			}
+			json.NewEncoder(w).Encode(videosResponse)
 			return
 		}
 		video, response := get.GetVideoByID(videoID)

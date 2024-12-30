@@ -5,9 +5,11 @@ import (
 	"back-end/services"
 	"back-end/settings"
 	"back-end/utilities"
+	"database/sql"
+	"fmt"
 )
 
-func getAllVideos() ([]models.Video, models.ServiceResponse) {
+func GetAllVideos(limitValue string, offsetValue string) (models.VideosResponse, models.ServiceResponse) {
 	dbConnection := services.ConnectToDB()
 	defer dbConnection.Close()
 	videos := []models.Video{}
@@ -15,21 +17,46 @@ func getAllVideos() ([]models.Video, models.ServiceResponse) {
 		IsSuccessful: false,
 		Message:      "",
 	}
+	numberOfVideos := 0
 	allVideoTags, videoTagsResponse := GetVideoTags()
 	if !videoTagsResponse.IsSuccessful {
 		response.Message = "Error getting tags " + videoTagsResponse.Message
-		return videos, response
+		return models.VideosResponse{
+			Videos:         videos,
+			NumberOfVideos: numberOfVideos,
+			VideoTags:      allVideoTags,
+		}, response
 	}
 	allShows, showsResponse := GetVideoTags()
 	if !showsResponse.IsSuccessful {
 		response.Message = "Error getting tags " + showsResponse.Message
-		return videos, response
+		return models.VideosResponse{
+			Videos:         videos,
+			NumberOfVideos: numberOfVideos,
+			VideoTags:      allVideoTags,
+		}, response
+	}
+	var results *sql.Rows
+	var err error
+
+	if limitValue != "" && offsetValue != "" {
+		results, err = dbConnection.Query(settings.GET_ALL_VIDEOS_QUERY + " LIMIT " + limitValue + " OFFSET " + offsetValue)
+	} else if limitValue != "" {
+		results, err = dbConnection.Query(settings.GET_ALL_VIDEOS_QUERY + " LIMIT " + limitValue)
+
+	} else if offsetValue != "" {
+		results, err = dbConnection.Query(settings.GET_ALL_VIDEOS_QUERY + " OFFSET " + offsetValue)
+	} else {
+		results, err = dbConnection.Query(settings.GET_ALL_VIDEOS_QUERY)
 	}
 
-	results, err := dbConnection.Query(settings.GET_ALL_VIDEOS_QUERY)
 	if err != nil {
 		response.Message = "Error running query " + err.Error()
-		return videos, response
+		return models.VideosResponse{
+			Videos:         videos,
+			NumberOfVideos: numberOfVideos,
+			VideoTags:      allVideoTags,
+		}, response
 	}
 
 	for results.Next() {
@@ -67,9 +94,32 @@ func getAllVideos() ([]models.Video, models.ServiceResponse) {
 		video.ShowTitle = currentVideoShow
 		videos = append(videos, video)
 	}
+
+	results, err = dbConnection.Query(settings.GET_ALL_VIDEOS_COUNT_QUERY)
+	if err != nil {
+		response.Message = "Error running query " + err.Error()
+		return models.VideosResponse{
+			Videos:         videos,
+			NumberOfVideos: numberOfVideos,
+			VideoTags:      allVideoTags,
+		}, response
+	}
+
+	for results.Next() {
+		results.Scan(
+			&numberOfVideos,
+		)
+	}
+
+	fmt.Println(numberOfVideos)
+
 	response.IsSuccessful = true
 
-	return videos, response
+	return models.VideosResponse{
+		Videos:         videos,
+		NumberOfVideos: numberOfVideos,
+		VideoTags:      allVideoTags,
+	}, response
 }
 
 func GetShows() ([]models.Show, models.ServiceResponse) {
@@ -248,14 +298,14 @@ func GetVideosBySearch(searchTerm string) ([]models.Video, models.ServiceRespons
 		IsSuccessful: false,
 		Message:      "",
 	}
-	allVideos, allVideosResponse := getAllVideos()
+	allVideos, allVideosResponse := GetAllVideos("", "")
 	if !allVideosResponse.IsSuccessful {
 		response.Message = "Error getting all videos " + allVideosResponse.Message
 		return videos, response
 	}
 
-	for i := 0; i < len(allVideos); i++ {
-		currentVideo := allVideos[i]
+	for i := 0; i < len(allVideos.Videos); i++ {
+		currentVideo := allVideos.Videos[i]
 		if utilities.IsSearchTermInVideo(searchTerm, currentVideo) {
 			videos = append(videos, currentVideo)
 		}
