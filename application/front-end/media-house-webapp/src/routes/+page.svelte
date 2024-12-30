@@ -7,6 +7,7 @@
     import getVideosBySearch from "../services/getVideosBySearch";
     import separateVideos from "../utilities/separateVideos";
     import { VIDEOS_SERVER_URI } from "../appSettings";
+    import Pager from "../components/Pager.svelte";
 
     let videos: IVideo[] = [];
     let firstVideos: IVideo[] = [];
@@ -89,3 +90,9 @@
         {/if}
     </div>
 </div>
+
+<Pager
+    currentPage={1}
+    maxPages={20}
+    pageQueryString="?page_number"
+/>

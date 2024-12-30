@@ -10,7 +10,6 @@
     import { VIDEOS_SERVER_URI } from "../../appSettings";
     import createDropdownOptions from "../../utilities/createDropdownOptions";
     import type IDropdownOption from "../../interfaces/IDropdownOption";
-    import Pager from "../../components/Pager.svelte";
 
     let videos: IVideo[] = [];
     let firstVideos: IVideo[] = [];
@@ -115,9 +114,3 @@
         </div>
     {/if}
 </div>
-
-<Pager
-    currentPage={7}
-    maxPages={50}
-    pageQueryString="?page_number"
-/>
