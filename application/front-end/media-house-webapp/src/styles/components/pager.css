@@ -1,0 +1,14 @@
+.pagerContainer {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.pagerContainer a {
+    margin-right: 10px;
+    color: rgb(0, 155, 255);
+}
+
+.currentPage {
+    color: rgb(0, 100, 155) !important;
+}
