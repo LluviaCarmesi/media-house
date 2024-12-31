@@ -157,7 +157,9 @@ func movies(w http.ResponseWriter, r *http.Request) {
 	enableSettings(&w)
 	switch r.Method {
 	case http.MethodGet:
-		videosResponse, getResponse := get.GetVideosByType("movie")
+		limitValue := r.URL.Query().Get("limit")
+		offsetValue := r.URL.Query().Get("offset")
+		videosResponse, getResponse := get.GetVideosByType("movie", limitValue, offsetValue)
 		if !getResponse.IsSuccessful {
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(getResponse)

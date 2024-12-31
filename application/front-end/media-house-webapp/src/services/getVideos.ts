@@ -3,7 +3,7 @@ import type IVideo from "../interfaces/IVideo";
 import * as Strings from "../strings/ENUSStrings";
 import isStatusGood from "../utilities/isStatusGood";
 
-export default async function getVideosByPage(limitValue: number, offsetValue: number) {
+export default async function getVideos(limitValue: number, offsetValue: number) {
     const returnedResponse: {
             videos: IVideo[],
             numberOfVideos: number,

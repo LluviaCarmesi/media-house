@@ -3,21 +3,23 @@ import * as Strings from "../strings/ENUSStrings";
 import type IVideo from "../interfaces/IVideo";
 import { VIDEOS_URI } from "../appSettings";
 
-export default async function getVideosByType(type: string) {
+export default async function getVideosByType(type: string, limitValue: number, offsetValue: number) {
     const returnedResponse: {
         videos: IVideo[],
+        numberOfVideos: number,
         tags: string[],
         isSuccessful: boolean,
         errorMessage: string
     }
         = {
         videos: [],
+        numberOfVideos: 0,
         tags: [],
         isSuccessful: false,
         errorMessage: ""
     }
 
-    await fetch(`${VIDEOS_URI}${type}/`)
+    await fetch(`${VIDEOS_URI}${type}/?limit=${limitValue}&offset=${offsetValue}`)
         .then((response) => {
             returnedResponse.isSuccessful = isStatusGood(response.status);
             return response.json();
@@ -28,6 +30,7 @@ export default async function getVideosByType(type: string) {
             }
             else {
                 returnedResponse.videos = result.Videos;
+                returnedResponse.numberOfVideos = result.NumberOfVideos;
                 returnedResponse.tags = result.VideoTags;
             }
         })

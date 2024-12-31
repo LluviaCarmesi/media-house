@@ -1,6 +1,7 @@
 .column {
     float: left;
-    width: 33%;
+    width: 20%;
+    margin-bottom: 30px;
 }
 
 .row:after {
