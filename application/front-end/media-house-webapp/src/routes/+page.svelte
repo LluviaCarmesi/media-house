@@ -13,10 +13,15 @@
     let firstVideos: IVideo[] = [];
     let secondVideos: IVideo[] = [];
     let thirdVideos: IVideo[] = [];
+    let fourthVideos: IVideo[] = [];
+    let fifthVideos: IVideo[] = [];
     let searchTerm = "";
     let errorMessage = "";
     let isLoading = false;
     const loadingMessage = "Loading...";
+    let currentPage = 1;
+    let maxPages = 1;
+    let numberOfVideos = 0;
 
     function getSearchTerm(event: any) {
         searchTerm = event.target.value.toLowerCase();
@@ -28,10 +33,12 @@
         const videoResponse = await getVideosBySearch(searchTerm);
         if (videoResponse.isSuccessful) {
             videos = videoResponse.videos;
-            const separatedVideos = separateVideos(videos, 3);
+            const separatedVideos = separateVideos(videos, 5);
             firstVideos = separatedVideos[0];
             secondVideos = separatedVideos[1];
             thirdVideos = separatedVideos[2];
+            fourthVideos = separatedVideos[3];
+            fifthVideos = separatedVideos[4];
         } else {
             errorMessage = videoResponse.errorMessage;
         }
@@ -65,7 +72,7 @@
         {:else}
             <div class="column">
                 {#each firstVideos as video}
-                    <a href={"/video/" + video.Id}>
+                    <a href={"/video/" + video.ID}>
                         <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
                         <p>{video.Title}</p>
                     </a>
@@ -73,7 +80,7 @@
             </div>
             <div class="column">
                 {#each secondVideos as video}
-                    <a href={"/video/" + video.Id}>
+                    <a href={"/video/" + video.ID}>
                         <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
                         <p>{video.Title}</p>
                     </a>
@@ -81,7 +88,23 @@
             </div>
             <div class="column">
                 {#each thirdVideos as video}
-                    <a href={"/video/" + video.Id}>
+                    <a href={"/video/" + video.ID}>
+                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
+                        <p>{video.Title}</p>
+                    </a>
+                {/each}
+            </div>
+            <div class="column">
+                {#each fourthVideos as video}
+                    <a href={"/video/" + video.ID}>
+                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
+                        <p>{video.Title}</p>
+                    </a>
+                {/each}
+            </div>
+            <div class="column">
+                {#each fifthVideos as video}
+                    <a href={"/video/" + video.ID}>
                         <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
                         <p>{video.Title}</p>
                     </a>
@@ -92,7 +115,7 @@
 </div>
 
 <Pager
-    currentPage={1}
-    maxPages={20}
-    pageQueryString="?page_number"
+    currentPage={currentPage}
+    maxPages={maxPages}
+    pageQueryString={"?page_number"}
 />
