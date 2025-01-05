@@ -1,6 +1,6 @@
 import isStatusGood from "../utilities/isStatusGood";
 import * as Strings from "../strings/ENUSStrings";
-import type IVideo from "../interfaces/IVideo";
+import type IVideo from "../interfaces/IVideoOld";
 import { VIDEOS_URI } from "../appSettings";
 
 export default async function getVideosByType(type: string, limitValue: number, offsetValue: number) {

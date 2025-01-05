@@ -9,9 +9,9 @@ const SHOWS_PATH = VIDEOS_PATH + "shows/"
 
 // file directories
 const VIDEO_FILES_DIRECTORY = "/home/meradil/Downloads/"
-const VIDEO_FILES_SERVE_PATH = "Downloads"
+const VIDEO_FILES_SERVE_PATH = "Downloads/"
 const PREVIEW_FILES_DIRECTORY = "/home/meradil/Downloads/"
-const PREVIEW_FILES_SERVE_PATH = "Downloads"
+const PREVIEW_FILES_SERVE_PATH = "Downloads/"
 const VIDEO_FILES_TEMP_DIRECTORY = "/home/meradil/Downloads/Temp/"
 
 //const VIDEO_FILES_DIRECTORY = "/media/vol_1/media_house/videos"

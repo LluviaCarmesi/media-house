@@ -8,6 +8,7 @@ import (
 	"back-end/settings"
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -179,7 +180,8 @@ func videos(w http.ResponseWriter, r *http.Request) {
 			json.NewEncoder(w).Encode(response)
 			return
 		}
-		response = delete.DeleteVideo(videoID)
+		response = delete.DeleteVideoFiles(videoID)
+		fmt.Println(response)
 		if !response.IsSuccessful {
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(response)

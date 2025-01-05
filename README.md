@@ -10,7 +10,5 @@ MySQL is used as the database
 # TODO
 1. Get Shows to show up on shows page. When clicking on a show, it should show the collection of videos for it.
 2. Allow editing of a video
-3. Allow searching when in the "edit a video" section
-4. When deleting a video, delete the file associated with it as well before deleting from the database.
-5. When playing a video, have an edit button underneath that navigates to the edit video page for that video
-6. Show dropdown showing how they want to order the videos (alphabetically, created date, modified date)
+3. When playing a video, have an edit button underneath that navigates to the edit video page for that video
+4. Show dropdown showing how they want to order the videos (alphabetically, created date, modified date)

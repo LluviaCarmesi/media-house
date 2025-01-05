@@ -1,5 +1,5 @@
 import isStatusGood from "../utilities/isStatusGood";
-import type INewVideo from "../interfaces/INewVideo";
+import type INewVideo from "../interfaces/IVideo";
 import { VIDEOS_URI } from "../appSettings";
 
 export default async function addVideo(

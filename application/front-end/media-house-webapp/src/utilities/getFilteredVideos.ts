@@ -1,4 +1,4 @@
-import type IVideo from "../interfaces/IVideo";
+import type IVideo from "../interfaces/IVideoOld";
 
 export default function (videos: IVideo[], searchTerm: string, chosenTag: string) {
     let filteredVideos = videos;

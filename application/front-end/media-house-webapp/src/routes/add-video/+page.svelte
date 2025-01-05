@@ -8,14 +8,14 @@
     import getShows from "../../services/getShows";
     import type IDropdownOption from "../../interfaces/IDropdownOption";
     import addVideo from "../../services/addVideo";
-    import type INewVideo from "../../interfaces/INewVideo";
+    import type IVideo from "../../interfaces/IVideo";
 
     let showDropdownOptions: IDropdownOption[] = [];
     let isLoading = true;
     let errorMessage = "";
     let isSuccessful = false;
 
-    const newVideoItem: any = {
+    const videoItem: any = {
         Title: "",
         Type: "",
         Episode: "",
@@ -51,35 +51,35 @@
     getShowsResponse();
 
     function handleFileUpload(event: any) {
-        newVideoItem[event.target.id as keyof INewVideo] =
+        videoItem[event.target.id as keyof IVideo] =
             event.target.files[0];
     }
 
     function handleTextChange(event: any) {
-        newVideoItem[event.target.id as keyof INewVideo] = event.target.value;
+        videoItem[event.target.id as keyof IVideo] = event.target.value;
     }
 
     function handleDropdownChange(event: any) {
-        newVideoItem[event.target.id as keyof INewVideo] = event.target.value;
+        videoItem[event.target.id as keyof IVideo] = event.target.value;
     }
 
     async function submitVideo() {
-        newVideoItem.Tags = newVideoItem.TagsString.split(",");
-        console.log(newVideoItem.Tags);
+        videoItem.Tags = videoItem.TagsString.split(",");
+        console.log(videoItem.Tags);
 
         const videoFileTotalChunks = Math.ceil(
-            newVideoItem.VideoFile.size / CHUNK_SIZE,
+            videoItem.VideoFile.size / CHUNK_SIZE,
         );
-        for (let i = 0; i < newVideoItem.VideoFile.size; i += CHUNK_SIZE) {
-            const end = Math.min(i + CHUNK_SIZE, newVideoItem.VideoFile.size);
-            const chunk = newVideoItem.VideoFile.slice(i, end);
+        for (let i = 0; i < videoItem.VideoFile.size; i += CHUNK_SIZE) {
+            const end = Math.min(i + CHUNK_SIZE, videoItem.VideoFile.size);
+            const chunk = videoItem.VideoFile.slice(i, end);
             const videoFileChunkNumber = Math.floor(i / CHUNK_SIZE);
             progress = (
                 (videoFileChunkNumber / videoFileTotalChunks) *
                 100
             ).toFixed(2);
             const addVideoResponse = await addVideo(
-                newVideoItem,
+                videoItem,
                 videoFileChunkNumber,
                 videoFileTotalChunks,
                 chunk,
@@ -126,7 +126,7 @@
         <div class="centerContainer">
             <TextField
                 inputID="Title"
-                currentValue={newVideoItem.Title}
+                currentValue={videoItem.Title}
                 fieldLabel="Title"
                 onChangeTextField={handleTextChange}
             />
@@ -134,17 +134,17 @@
         <div class="centerContainer">
             <Dropdown
                 inputID="Type"
-                currentValue={newVideoItem.Type}
+                currentValue={videoItem.Type}
                 fieldLabel="Type"
                 onDropdownChange={handleDropdownChange}
                 dropdownOptions={TYPES_OPTIONS}
             />
         </div>
-        {#if newVideoItem.Type == TYPES.SHOW.value}
+        {#if videoItem.Type == TYPES.SHOW.value}
             <div class="centerContainer">
                 <TextField
                     inputID="Episode"
-                    currentValue={newVideoItem.Episode}
+                    currentValue={videoItem.Episode}
                     fieldLabel="Episode Number"
                     onChangeTextField={handleTextChange}
                 />
@@ -152,7 +152,7 @@
             <div class="centerContainer">
                 <Dropdown
                     inputID="ShowID"
-                    currentValue={newVideoItem.ShowID}
+                    currentValue={videoItem.ShowID}
                     fieldLabel="Show"
                     onDropdownChange={handleDropdownChange}
                     dropdownOptions={[]}
@@ -162,7 +162,7 @@
         <div class="centerContainer">
             <TextField
                 inputID="Language"
-                currentValue={newVideoItem.Language}
+                currentValue={videoItem.Language}
                 fieldLabel="Language"
                 onChangeTextField={handleTextChange}
             />
@@ -170,7 +170,7 @@
         <div class="centerContainer">
             <TextField
                 inputID="Duration"
-                currentValue={newVideoItem.Duration}
+                currentValue={videoItem.Duration}
                 fieldLabel="Duration"
                 onChangeTextField={handleTextChange}
             />
@@ -178,7 +178,7 @@
         <div class="centerContainer">
             <TextField
                 inputID="TagsString"
-                currentValue={newVideoItem.TagsString}
+                currentValue={videoItem.TagsString}
                 fieldLabel="Tags"
                 onChangeTextField={handleTextChange}
             />

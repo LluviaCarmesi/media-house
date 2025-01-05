@@ -254,8 +254,8 @@ func GetVideoByID(videoID uuid.UUID) (models.Video, models.ServiceResponse) {
 			response.Message = "Error scanning row " + err.Error()
 		}
 	}
-	response.IsSuccessful = true
 
+	response.IsSuccessful = true
 	return video, response
 }
 
