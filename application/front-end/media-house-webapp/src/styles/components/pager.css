@@ -1,0 +1,29 @@
+.pagerContainer {
+    clear: left;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.pagerContainer a {
+    margin-right: 10px;
+    color: rgb(0, 155, 255);
+    text-decoration: none;
+    padding: 2px 8px;
+    background-color: rgba(0, 255, 255, 0.5);
+    transition-duration: 0.5s;
+}
+
+.pagerContainer a:hover {
+    margin-right: 10px;
+    color: rgb(0, 155, 255);
+    text-decoration: none;
+    padding: 2px 8px;
+    background-color: rgba(0, 200, 255, 0.5);
+    transition-duration: 0.5s;
+    transition-property: background-color;
+}
+
+.currentPage {
+    color: rgb(0, 100, 155) !important;
+}

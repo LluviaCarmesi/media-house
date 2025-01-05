@@ -1,0 +1,9 @@
+.filePickerContainer {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content:space-between;
+}
+
+.filePickerContainer span {
+    margin-right: 10px;
+}
