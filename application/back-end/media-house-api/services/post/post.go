@@ -138,9 +138,9 @@ func AddVideoFiles(video models.Video, videoChunks models.VideoChunks) models.Se
 		response.Message = addVideoResponse.Message
 		return response
 	}
+
 	response.IsSuccessful = true
 	response.Message = "Video was successfully added"
-
 	return response
 }
 
