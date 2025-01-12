@@ -1,7 +1,6 @@
 <script lang="ts">
-    import "../../styles/common.css";
+    import "../../../styles/common.css";
     import Navigation from "../../../components/Navigation.svelte";
-    import Filters from "../../../components/Filters.svelte";
 </script>
 
 <Navigation />
@@ -13,6 +12,7 @@
     <div class="textContainer">
         <span class="description">Edit the video using the form below! </span>
     </div>
+    <!--
     {#if !!progress}
         <div class="textContainer">
             <span class="warning"
@@ -109,4 +109,5 @@
             <button on:click={submitVideo}>Submit</button>
         </div>
     </div>
+    -->
 </div>
