@@ -161,8 +161,10 @@
     </div>
 </div>
 
-<Pager
-    currentPage={currentPage}
-    maxPages={maxPages}
-    pageQueryString={"?page_number"}
-/>
+{#if !isLoading}
+    <Pager
+        currentPage={currentPage}
+        maxPages={maxPages}
+        pageQueryString={"?page_number"}
+    />
+{/if}

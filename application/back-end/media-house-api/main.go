@@ -273,5 +273,5 @@ func main() {
 	http.HandleFunc(settings.SHOWS_PATH, shows)
 	http.HandleFunc(settings.VIDEOS_SEARCH_PATH, search)
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }

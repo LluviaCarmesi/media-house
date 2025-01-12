@@ -1,8 +1,6 @@
 node_modules
 
-back-end/media-house-api/bin
-back-end/media-house-api/AppSettings.cs
-back-end/media-house-api-go/secrets
+back-end/media-house-api/secrets
 
 # Output
 .output
