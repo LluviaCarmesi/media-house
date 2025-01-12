@@ -8,12 +8,17 @@
 
     const pagesToShow: number[] = [currentPage];
 
+    const openPage = (pageNumber: number) => {
+        window.open(`${pageQueryString}=${pageNumber}`, "_self");
+    }
+
     for (let i = 1; i < 2*DEFAULT_NUMBER_OF_PAGES_TO_SHOW; i++) {
         if ((currentPage - i) > 0) {
             pagesToShow.push(currentPage - i)
         }
         if ((currentPage + i) <= maxPages) {
             pagesToShow.push(currentPage + i)
+            console.log(pagesToShow);
         }
         if (pagesToShow.length > 10) {
             break;
@@ -25,16 +30,16 @@
 
 <div class="pagerContainer">
     {#if currentPage - 1 > 0}
-        <a href={`${pageQueryString}=${currentPage - 1}`}>&lt</a>
+    <button on:click={() => openPage(currentPage - 1)}>&lt</button>
     {/if}
     {#each pagesToShow as pageToShow}
         {#if pageToShow === currentPage}
-            <a class="currentPage" href={`${pageQueryString}=${pageToShow}`}>{pageToShow}</a>
+            <button class="currentPage" on:click={() => openPage(pageToShow)}>{pageToShow}</button>
         {:else}
-            <a href={`${pageQueryString}=${pageToShow}`}>{pageToShow}</a>
+            <button on:click={() => openPage(pageToShow)}>{pageToShow}</button>
         {/if}
     {/each}
     {#if currentPage + 1 <= maxPages}
-        <a href={`${pageQueryString}=${currentPage + 1}`}>&gt</a>
+        <button on:click={() => openPage(currentPage + 1)}>&gt</button>
     {/if}
 </div>
