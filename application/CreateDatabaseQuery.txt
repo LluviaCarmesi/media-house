@@ -1,0 +1,28 @@
+CREATE DATABASE media_house_content;
+USE media_house_content;
+
+CREATE TABLE shows (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title varchar(255),
+    preview_path varchar(255)
+);
+
+CREATE TABLE videos (
+    id char(36) PRIMARY KEY,
+    title varchar(255),
+    type ENUM('movie', 'show') DEFAULT 'movie',
+    episode varchar(100),
+    show_id int,
+    duration varchar(20),
+    language varchar(100),
+    preview_path varchar(255),
+    video_path varchar(255),
+    FOREIGN KEY (show_id) REFERENCES shows(id)
+);
+
+CREATE TABLE video_tags (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title varchar(100),
+    video_id VARCHAR(36),
+    FOREIGN KEY (video_id) REFERENCES videos(id)
+);

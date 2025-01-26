@@ -1,0 +1,25 @@
+node_modules
+
+# Secrets
+back-end/media-house-api/secrets
+
+# Output
+front-end/media-house-webapp.output
+front-end/media-house-webapp.vercel
+front-end/media-house-webapp/.svelte-kit
+front-end/media-house-webapp/build
+back-end/media-house-api/back-end
+
+# OS
+front-end/media-house-webapp.DS_Store
+front-end/media-house-webappThumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

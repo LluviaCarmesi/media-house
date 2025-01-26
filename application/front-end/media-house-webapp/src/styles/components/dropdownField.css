@@ -1,0 +1,9 @@
+.dropdownContainer {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content:space-between;
+}
+
+.dropdownContainer span {
+    margin-right: 10px;
+}

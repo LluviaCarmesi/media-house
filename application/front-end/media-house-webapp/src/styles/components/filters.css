@@ -1,0 +1,23 @@
+.filterContainer {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.filterContainer span {
+    font-size: 20px;
+}
+
+.filterContainer input {
+    min-width: 400px;
+}
+
+@media screen and (max-width: 600px) {
+    .filterContainer input {
+        min-width: 0px;
+    }
+
+    .filterContainer span {
+        font-size: 14px;
+    }
+}

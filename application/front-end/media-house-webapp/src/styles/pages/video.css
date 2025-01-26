@@ -1,0 +1,9 @@
+.container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.container video {
+    max-width: 50%;
+    margin: auto;
+}
