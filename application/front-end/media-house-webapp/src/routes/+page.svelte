@@ -29,16 +29,18 @@
     }
 
     function checkPageState() {
+        searchTerm = "";
+        currentPage = 1;
         const URLParameters = new URLSearchParams(window.location.search);
         const searchTermValue = URLParameters.get("q");
+
         if (!!searchTermValue) {
             searchTerm = searchTermValue;
         }
+
         const pageNumberValue = URLParameters.get("page_number");
         if (!!pageNumberValue) {
             currentPage = parseInt(pageNumberValue);
-        } else {
-            currentPage = 1;
         }
 
         if (!!searchTerm) {

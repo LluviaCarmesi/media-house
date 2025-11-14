@@ -20,9 +20,10 @@ const SHOWS_PATH = VIDEOS_PATH + "shows/"
 //const PREVIEW_FILES_SERVE_PATH = "Downloads/"
 //const VIDEO_FILES_TEMP_DIRECTORY = "/home/meradil/Downloads/Temp/"
 
-const VIDEO_FILES_DIRECTORY = "/media/vol_1/media_house/videos/"
+const MEDIA_DIRECTORY = "/media/vol_1/media_house/"
+const VIDEO_FILES_DIRECTORY = MEDIA_DIRECTORY + "videos/"
 const VIDEO_FILES_SERVE_PATH = "videos/"
-const PREVIEW_FILES_DIRECTORY = "/media/vol_1/media_house/photos/"
+const PREVIEW_FILES_DIRECTORY = MEDIA_DIRECTORY + "photos/"
 const PREVIEW_FILES_SERVE_PATH = "photos/"
 const VIDEO_FILES_TEMP_DIRECTORY = "/media/vol_1/temp/"
 
