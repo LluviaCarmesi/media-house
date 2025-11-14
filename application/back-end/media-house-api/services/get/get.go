@@ -89,6 +89,9 @@ func GetAllVideos(limitValue string, offsetValue string) (models.VideosResponse,
 				}
 			}
 		}
+		if !utilities.IsValidImageFile(video.PreviewPath) {
+			video.PreviewPath = settings.NO_IMAGE_FOUND_FILE
+		}
 		video.Tags = currentVideoTags
 		video.ShowTitle = currentVideoShow
 		videos = append(videos, video)
@@ -255,6 +258,10 @@ func GetVideoByID(videoID uuid.UUID) (models.Video, models.ServiceResponse) {
 		}
 	}
 
+	if !utilities.IsValidImageFile(video.PreviewPath) {
+		video.PreviewPath = settings.NO_IMAGE_FOUND_FILE
+	}
+
 	response.IsSuccessful = true
 	return video, response
 }
@@ -324,6 +331,9 @@ func GetVideosByType(
 			if video.ID == allVideoTags[i].VideoID {
 				currentVideoTags = append(currentVideoTags, allVideoTags[i].Title)
 			}
+		}
+		if !utilities.IsValidImageFile(video.PreviewPath) {
+			video.PreviewPath = settings.NO_IMAGE_FOUND_FILE
 		}
 		video.Tags = currentVideoTags
 		videos = append(videos, video)
@@ -405,6 +415,9 @@ func GetVideosBySearch(searchTerm string, limitValue string, offsetValue string)
 			limitValueInt = len(videosWithSearchTerm) - offsetValueInt
 		}
 		for i := offsetValueInt; i < limitValueInt; i++ {
+			if utilities.IsValidImageFile(videosWithSearchTerm[i].PreviewPath) {
+				videosWithSearchTerm[i].PreviewPath = settings.NO_IMAGE_FOUND_FILE
+			}
 			returnedVideos = append(returnedVideos, videosWithSearchTerm[i])
 			numberOfVideos++
 		}
@@ -422,6 +435,9 @@ func GetVideosBySearch(searchTerm string, limitValue string, offsetValue string)
 			limitValueInt = len(videosWithSearchTerm)
 		}
 		for i := 0; i < limitValueInt; i++ {
+			if utilities.IsValidImageFile(videosWithSearchTerm[i].PreviewPath) {
+				videosWithSearchTerm[i].PreviewPath = settings.NO_IMAGE_FOUND_FILE
+			}
 			returnedVideos = append(returnedVideos, videosWithSearchTerm[i])
 			numberOfVideos++
 		}
@@ -437,6 +453,9 @@ func GetVideosBySearch(searchTerm string, limitValue string, offsetValue string)
 			}, response
 		}
 		for i := offsetValueInt; i < len(videosWithSearchTerm); i++ {
+			if utilities.IsValidImageFile(videosWithSearchTerm[i].PreviewPath) {
+				videosWithSearchTerm[i].PreviewPath = settings.NO_IMAGE_FOUND_FILE
+			}
 			returnedVideos = append(returnedVideos, videosWithSearchTerm[i])
 			numberOfVideos++
 		}
@@ -506,6 +525,9 @@ func GetVideosByShow(showID string) ([]models.Video, models.ServiceResponse) {
 			if *video.ShowID == allShows[i].ID {
 				currentVideoShow = allShows[i].Title
 			}
+		}
+		if !utilities.IsValidImageFile(video.PreviewPath) {
+			video.PreviewPath = settings.NO_IMAGE_FOUND_FILE
 		}
 		video.Tags = currentVideoTags
 		video.ShowTitle = currentVideoShow

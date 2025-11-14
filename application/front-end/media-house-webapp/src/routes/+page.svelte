@@ -5,18 +5,17 @@
     import Filters from "../components/Filters.svelte";
     import type IVideo from "../interfaces/IVideo";
     import getVideosBySearch from "../services/getVideosBySearch";
-    import separateVideos from "../utilities/separateVideos";
-    import { DEFAULT_LIMIT, DEFAULT_OFFSET, VIDEOS_SERVER_URI } from "../appSettings";
+    import {
+        DEFAULT_LIMIT,
+        DEFAULT_OFFSET,
+        VIDEOS_SERVER_URI,
+    } from "../appSettings";
     import Pager from "../components/Pager.svelte";
     import getVideos from "../services/getVideos";
     import { onMount } from "svelte";
+    import { afterNavigate } from "$app/navigation";
 
     let videos: IVideo[] = [];
-    let firstVideos: IVideo[] = [];
-    let secondVideos: IVideo[] = [];
-    let thirdVideos: IVideo[] = [];
-    let fourthVideos: IVideo[] = [];
-    let fifthVideos: IVideo[] = [];
     let searchTerm = "";
     let errorMessage = "";
     let isLoading = false;
@@ -29,7 +28,7 @@
         searchTerm = event.target.value.toLowerCase();
     }
 
-    onMount(() => {
+    function checkPageState() {
         const URLParameters = new URLSearchParams(window.location.search);
         const searchTermValue = URLParameters.get("q");
         if (!!searchTermValue) {
@@ -38,30 +37,36 @@
         const pageNumberValue = URLParameters.get("page_number");
         if (!!pageNumberValue) {
             currentPage = parseInt(pageNumberValue);
+        } else {
+            currentPage = 1;
         }
 
         if (!!searchTerm) {
             getVideosBySearchResponse();
-        }
-        else {
+        } else {
             getVideosResponse();
         }
+    }
+
+    onMount(() => {
+        checkPageState();
+    });
+
+    afterNavigate(() => {
+        checkPageState();
     });
 
     async function getVideosResponse() {
         isLoading = true;
         errorMessage = "";
-        const videoResponse = await getVideos(DEFAULT_LIMIT, DEFAULT_OFFSET * (currentPage - 1));
+        const videoResponse = await getVideos(
+            DEFAULT_LIMIT,
+            DEFAULT_OFFSET * (currentPage - 1),
+        );
         if (videoResponse.isSuccessful) {
             videos = videoResponse.videos;
             numberOfVideos = videoResponse.numberOfVideos;
             maxPages = Math.ceil(numberOfVideos / DEFAULT_LIMIT);
-            const separatedVideos = separateVideos(videos, 5);
-            firstVideos = separatedVideos[0];
-            secondVideos = separatedVideos[1];
-            thirdVideos = separatedVideos[2];
-            fourthVideos = separatedVideos[3];
-            fifthVideos = separatedVideos[4];
         } else {
             errorMessage = videoResponse.errorMessage;
         }
@@ -75,17 +80,15 @@
         }
         isLoading = true;
         errorMessage = "";
-        const videoResponse = await getVideosBySearch(searchTerm, DEFAULT_LIMIT, DEFAULT_OFFSET * (currentPage - 1));
+        const videoResponse = await getVideosBySearch(
+            searchTerm,
+            DEFAULT_LIMIT,
+            DEFAULT_OFFSET * (currentPage - 1),
+        );
         if (videoResponse.isSuccessful) {
             videos = videoResponse.videos;
             numberOfVideos = videoResponse.numberOfVideos;
             maxPages = Math.ceil(numberOfVideos / DEFAULT_LIMIT);
-            const separatedVideos = separateVideos(videos, 5);
-            firstVideos = separatedVideos[0];
-            secondVideos = separatedVideos[1];
-            thirdVideos = separatedVideos[2];
-            fourthVideos = separatedVideos[3];
-            fifthVideos = separatedVideos[4];
         } else {
             errorMessage = videoResponse.errorMessage;
         }
@@ -117,42 +120,12 @@
         {:else if !!errorMessage}
             <span>{errorMessage}</span>
         {:else}
-            <div class="column">
-                {#each firstVideos as video}
+            <div class="imageGrid">
+                {#each videos as video}
                     <a href={"/video/" + video.ID}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
-                        <p>{video.Title}</p>
-                    </a>
-                {/each}
-            </div>
-            <div class="column">
-                {#each secondVideos as video}
-                    <a href={"/video/" + video.ID}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
-                        <p>{video.Title}</p>
-                    </a>
-                {/each}
-            </div>
-            <div class="column">
-                {#each thirdVideos as video}
-                    <a href={"/video/" + video.ID}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
-                        <p>{video.Title}</p>
-                    </a>
-                {/each}
-            </div>
-            <div class="column">
-                {#each fourthVideos as video}
-                    <a href={"/video/" + video.ID}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
-                        <p>{video.Title}</p>
-                    </a>
-                {/each}
-            </div>
-            <div class="column">
-                {#each fifthVideos as video}
-                    <a href={"/video/" + video.ID}>
-                        <img src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`} />
+                        <img
+                            src={`${VIDEOS_SERVER_URI}/${video.PreviewPath}`}
+                        />
                         <p>{video.Title}</p>
                     </a>
                 {/each}
@@ -162,9 +135,5 @@
 </div>
 
 {#if !isLoading}
-    <Pager
-        currentPage={currentPage}
-        maxPages={maxPages}
-        pageQueryString={"?page_number"}
-    />
+    <Pager {currentPage} {maxPages} pageQueryString={"?page_number"} />
 {/if}

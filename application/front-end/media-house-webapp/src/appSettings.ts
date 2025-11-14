@@ -1,5 +1,6 @@
 // URIs
 export const API_SERVER_URI = "http://192.168.1.247:445/api/";
+//export const API_SERVER_URI = "http://localhost:8080/api/";
 export const VIDEOS_SERVER_URI = "http://192.168.1.247:444";
 export const VIDEOS_URI = API_SERVER_URI + "videos/";
 export const VIDEOS_SEARCH_URI = VIDEOS_URI + "search/";

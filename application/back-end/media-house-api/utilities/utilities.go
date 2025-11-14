@@ -3,6 +3,7 @@ package utilities
 import (
 	"back-end/models"
 	"back-end/settings"
+	"os"
 	"strings"
 )
 
@@ -66,4 +67,13 @@ func IsSearchTermInVideo(searchTerm string, video models.Video) bool {
 	}
 
 	return doesVideoHaveSearchTerm
+}
+
+func IsValidImageFile(path string) bool {
+	f, err := os.Open(path)
+	if err != nil {
+		return false
+	}
+	defer f.Close()
+	return true
 }

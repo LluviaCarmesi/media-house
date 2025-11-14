@@ -65,7 +65,6 @@
 
     async function submitVideo() {
         videoItem.Tags = videoItem.TagsString.split(",");
-        console.log(videoItem.Tags);
 
         const videoFileTotalChunks = Math.ceil(
             videoItem.VideoFile.size / CHUNK_SIZE,

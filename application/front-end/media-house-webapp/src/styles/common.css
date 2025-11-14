@@ -4,6 +4,12 @@
     margin-bottom: 30px;
 }
 
+.imageGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
 .row:after {
     content: "";
     display: table;

@@ -3,6 +3,9 @@ package settings
 // ports
 const SERVE_PORT = ":8080"
 
+// static files
+const NO_IMAGE_FOUND_FILE = PREVIEW_FILES_SERVE_PATH + "NoImageFound***.PNG"
+
 // URI paths
 const API_ROOT = "/api/"
 const VIDEOS_PATH = API_ROOT + "videos/"
