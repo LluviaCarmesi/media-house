@@ -389,6 +389,7 @@ func GetVideosBySearch(searchTerm string, limitValue string, offsetValue string)
 		currentVideo := allVideos.Videos[i]
 		if utilities.IsSearchTermInVideo(searchTerm, currentVideo) {
 			videosWithSearchTerm = append(videosWithSearchTerm, currentVideo)
+			numberOfVideos++
 		}
 	}
 
@@ -411,15 +412,15 @@ func GetVideosBySearch(searchTerm string, limitValue string, offsetValue string)
 				VideoTags:      allVideos.VideoTags,
 			}, response
 		}
-		if limitValueInt > len(videosWithSearchTerm)-offsetValueInt {
-			limitValueInt = len(videosWithSearchTerm) - offsetValueInt
+		limitValueInt = limitValueInt + offsetValueInt
+		if limitValueInt > len(videosWithSearchTerm) {
+			limitValueInt = len(videosWithSearchTerm)
 		}
 		for i := offsetValueInt; i < limitValueInt; i++ {
 			if !utilities.IsValidImageFile(videosWithSearchTerm[i].PreviewPath) {
 				videosWithSearchTerm[i].PreviewPath = settings.NO_IMAGE_FOUND_FILE
 			}
 			returnedVideos = append(returnedVideos, videosWithSearchTerm[i])
-			numberOfVideos++
 		}
 	} else if limitValue != "" {
 		limitValueInt, err := strconv.Atoi(limitValue)
@@ -439,7 +440,6 @@ func GetVideosBySearch(searchTerm string, limitValue string, offsetValue string)
 				videosWithSearchTerm[i].PreviewPath = settings.NO_IMAGE_FOUND_FILE
 			}
 			returnedVideos = append(returnedVideos, videosWithSearchTerm[i])
-			numberOfVideos++
 		}
 
 	} else if offsetValue != "" {
@@ -457,7 +457,6 @@ func GetVideosBySearch(searchTerm string, limitValue string, offsetValue string)
 				videosWithSearchTerm[i].PreviewPath = settings.NO_IMAGE_FOUND_FILE
 			}
 			returnedVideos = append(returnedVideos, videosWithSearchTerm[i])
-			numberOfVideos++
 		}
 	} else {
 		returnedVideos = videosWithSearchTerm

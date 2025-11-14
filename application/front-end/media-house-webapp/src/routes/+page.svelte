@@ -137,5 +137,11 @@
 </div>
 
 {#if !isLoading}
-    <Pager {currentPage} {maxPages} pageQueryString={"?page_number"} />
+    <Pager
+        {currentPage}
+        {maxPages}
+        pageQueryString={!!searchTerm
+            ? `?q=${searchTerm}&page_number`
+            : "?page_number"}
+    />
 {/if}

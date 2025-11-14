@@ -9,7 +9,7 @@
     import Slider from "../../../components/Slider.svelte";
     import { onMount } from "svelte";
     import Checkbox from "../../../components/Checkbox.svelte";
-    import { slide } from "svelte/transition";
+    import formatSecondsToMinutesAndSeconds from "../../../utilities/formatSecondsToMinutes";
 
     let video = {
         ID: "",
@@ -31,11 +31,20 @@
         shouldRepeatVideo: false,
         shouldCloseVideoAtCertainTime: false,
     };
+    const maxSliderValue = "1000";
+    const maxSliderValueNumber = 1000;
 
     let sliderValues: any = {
         videoRepeatStartTime: "0",
-        videoRepeatEndTime: "100",
-        closeVideoTime: "10",
+        videoRepeatEndTime: maxSliderValue,
+        closeVideoTime: "100",
+    };
+
+    let sliderValueLabels: any = {
+        videoRepeatStartTimeLabel: "",
+        videoRepeatEndTimeLabel: "",
+        videoEndTimeLabel: "",
+        closeVideoTimeLabel: "",
     };
 
     onMount(() => {
@@ -45,19 +54,32 @@
     function onCheckboxChange(e: any) {
         checkboxValues[e.target.id] = e.target.checked;
         if (e.target.id === "shouldCloseVideoAtCertainTime") {
-            const sliderValue = parseInt(sliderValues.closeVideoTime);
+            const sliderValueNumber = parseInt(sliderValues.closeVideoTime);
             const currentTime = new Date();
-            const millisecondsToAdd =sliderValue * 60 * 1000;
+            const secondsValue =
+                ((sliderValueNumber * 60) / maxSliderValueNumber) * 60;
+            sliderValueLabels.closeVideoTimeLabel =
+                formatSecondsToMinutesAndSeconds(secondsValue);
+            const millisecondsToAdd = secondsValue * 1000;
             videoStopTime = new Date(millisecondsToAdd + currentTime.getTime());
         }
+    }
+
+    function onSliderInput(e: any) {
+        // Maybe create a hashmap of all possible time frames for the maxSliderValue
+        // When changing slider input, check hashmap for value and update label
     }
 
     function onSliderChange(e: any) {
         sliderValues[e.target.id] = e.target.value;
         if (e.target.id === "closeVideoTime") {
-            const sliderValue = parseInt(e.target.value);
+            const sliderValueNumber = parseInt(sliderValues.closeVideoTime);
             const currentTime = new Date();
-            const millisecondsToAdd = sliderValue * 60 * 1000;
+            const secondsValue =
+                ((sliderValueNumber * 60) / maxSliderValueNumber) * 60;
+            sliderValueLabels.closeVideoTimeLabel =
+                formatSecondsToMinutesAndSeconds(secondsValue);
+            const millisecondsToAdd = secondsValue * 1000;
             videoStopTime = new Date(millisecondsToAdd + currentTime.getTime());
         }
     }
@@ -86,6 +108,14 @@
     function checkVideoInterval() {
         const videoElement: any = document.getElementById("videoElement");
         if (checkboxValues.shouldRepeatVideo) {
+            if (!sliderValueLabels.videoEndTimeLabel) {
+                sliderValueLabels.videoEndTimeLabel =
+                    formatSecondsToMinutesAndSeconds(videoElement.duration);
+                sliderValueLabels.videoRepeatStartTimeLabel = "0:00";
+                sliderValueLabels.videoRepeatEndTimeLabel =
+                    sliderValueLabels.videoEndTimeLabel;
+            }
+
             const videoRepeatStartTimeNumber = parseInt(
                 sliderValues.videoRepeatStartTime,
             );
@@ -93,9 +123,16 @@
                 sliderValues.videoRepeatEndTime,
             );
             const videoRepeatStartTimeDuration =
-                (videoRepeatStartTimeNumber * videoElement.duration) / 100;
+                (videoRepeatStartTimeNumber * videoElement.duration) /
+                maxSliderValueNumber;
             const videoRepeatEndTimeDuration =
-                (videoRepeatEndTimeNumber * videoElement.duration) / 100;
+                (videoRepeatEndTimeNumber * videoElement.duration) /
+                maxSliderValueNumber;
+
+            sliderValueLabels.videoRepeatStartTimeLabel =
+                formatSecondsToMinutesAndSeconds(videoRepeatStartTimeDuration);
+            sliderValueLabels.videoRepeatEndTimeLabel =
+                formatSecondsToMinutesAndSeconds(videoRepeatEndTimeDuration);
 
             if (videoElement.currentTime < videoRepeatStartTimeDuration) {
                 videoElement.currentTime = videoRepeatStartTimeDuration;
@@ -144,17 +181,23 @@
                 inputID="videoRepeatStartTime"
                 fieldLabel="Repeat Video at certain start time"
                 {onSliderChange}
+                {onSliderInput}
                 currentValue={sliderValues.videoRepeatStartTime}
+                startLabel={sliderValueLabels.videoRepeatStartTimeLabel}
+                endLabel={sliderValueLabels.videoEndTimeLabel}
                 minimum={"0"}
-                maximum={"100"}
+                maximum={maxSliderValue}
             />
             <Slider
                 inputID="videoRepeatEndTime"
                 fieldLabel="Repeat Video at certain end time"
                 {onSliderChange}
+                {onSliderInput}
                 currentValue={sliderValues.videoRepeatEndTime}
+                startLabel={sliderValueLabels.videoRepeatEndTimeLabel}
+                endLabel={sliderValueLabels.videoEndTimeLabel}
                 minimum={"0"}
-                maximum={"100"}
+                maximum={maxSliderValue}
             />
         {/if}
         <Checkbox
@@ -166,11 +209,14 @@
         {#if checkboxValues.shouldCloseVideoAtCertainTime}
             <Slider
                 inputID="closeVideoTime"
-                fieldLabel="Stop video after certain amount of minutes (30 max)"
+                fieldLabel="Stop video after certain amount of minutes (60 max)"
                 {onSliderChange}
+                {onSliderInput}
                 currentValue={sliderValues.closeVideoTime}
+                startLabel={sliderValueLabels.closeVideoTimeLabel}
+                endLabel={"60"}
                 minimum={"0"}
-                maximum={"30"}
+                maximum={maxSliderValue}
             />
         {/if}
         <!-- Have a dialog show up to confirm that the user wants to delete the video

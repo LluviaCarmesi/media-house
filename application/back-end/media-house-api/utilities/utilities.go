@@ -3,7 +3,6 @@ package utilities
 import (
 	"back-end/models"
 	"back-end/settings"
-	"fmt"
 	"os"
 	"strings"
 )
@@ -72,8 +71,6 @@ func IsSearchTermInVideo(searchTerm string, video models.Video) bool {
 
 func IsValidImageFile(path string) bool {
 	f, err := os.Open(settings.MEDIA_DIRECTORY + path)
-	fmt.Println(f)
-	fmt.Println(err)
 	if err != nil {
 		return false
 	}
