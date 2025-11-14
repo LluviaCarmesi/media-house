@@ -1,0 +1,9 @@
+.checkboxContainer {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.checkboxContainer span {
+    margin-right: 10px;
+}

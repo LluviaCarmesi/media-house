@@ -1,0 +1,9 @@
+.sliderContainer {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.sliderContainer span {
+    margin-right: 10px;
+}
